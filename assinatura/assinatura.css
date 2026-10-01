@@ -1,0 +1,12 @@
+/* Assinatura Gustavo · Vedoo — cole no CSS do site do cliente.
+   Usa a cor do texto do rodapé (currentColor), então funciona em fundo claro e escuro. */
+.vd-sign { display: inline-flex; align-items: center; gap: .5em; color: inherit; font-family: inherit; text-decoration: none; opacity: .75; transition: opacity .3s ease; white-space: nowrap; }
+.vd-sign:hover, .vd-sign:focus-visible { opacity: 1; }
+.vd-sign__mark { width: 1.9em; height: auto; overflow: visible; flex: none; }
+.vd-sign__mark circle { fill: none; stroke: currentColor; stroke-width: 1.5; }
+.vd-sign__mark .vd-sign__lens { fill: #E5383B; stroke: none; }
+.vd-sign__mark .vd-sign__lens, .vd-sign__mark .vd-sign__b { transition: transform .5s cubic-bezier(.22, .8, .2, 1); }
+.vd-sign:hover .vd-sign__lens, .vd-sign:hover .vd-sign__b { transform: translateX(-2.5px); }
+.vd-sign__who { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .25em; text-decoration-color: transparent; transition: text-decoration-color .3s ease; }
+.vd-sign:hover .vd-sign__who { text-decoration-color: currentColor; }
+@media (prefers-reduced-motion: reduce) { .vd-sign__mark .vd-sign__lens, .vd-sign__mark .vd-sign__b { transition: none; } }

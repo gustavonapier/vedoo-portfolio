@@ -1,0 +1,24 @@
+/*
+  Teste: fonte de destaque Unbounded (a mesma do logo) no lugar da Instrument Serif itálica.
+  Pra voltar pra fonte anterior, é só apagar a linha que carrega este arquivo no <head> das páginas.
+*/
+@font-face { font-family: "Unbounded"; src: url("fonts/unbounded-var.woff2") format("woff2"); font-weight: 200 900; font-display: swap; }
+:root { --serif: "Unbounded", system-ui, sans-serif; }
+em { font-style: normal; font-weight: 300; letter-spacing: -.03em; }
+
+/* A Unbounded é bem mais larga que o Bebas: os destaques dentro dos títulos ficam menores. */
+.display em { font-size: .6em; }
+.cta-band__title em { font-size: .6em; }
+.page-hero__title em { font-size: .56em; }
+.mesa__title em { font-size: 64px; }
+.conversa__title em { font-size: .52em; }
+@media (max-width: 760px) { .mesa__title em { font-size: .6em; } }
+
+/* Textos que eram inteiros na serifa */
+.manifesto__title { font-weight: 300; font-size: clamp(28px, 3.7vw, 54px); line-height: 1.1; letter-spacing: -.035em; }
+.bio__text .bio__lead { font-weight: 300; font-size: clamp(20px, 2vw, 28px); line-height: 1.25; letter-spacing: -.025em; }
+.work__item--next .work__media p { font-weight: 300; font-size: clamp(20px, 2vw, 28px); line-height: 1.15; letter-spacing: -.025em; }
+.footer__tag { font-weight: 300; font-size: clamp(18px, 2.2vw, 28px); letter-spacing: -.03em; }
+.menu__foot { font-weight: 300; font-size: 18px; letter-spacing: -.02em; }
+.win__empty { font-weight: 300; font-size: 25px; letter-spacing: -.03em; }
+.chat__b--big { font-weight: 300; font-size: clamp(19px, 1.55vw, 23px); line-height: 1.25; letter-spacing: -.025em; }

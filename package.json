@@ -1,0 +1,12 @@
+{
+  "name": "vedoo-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfólio Vedoo — Gustavo Azevedo",
+  "scripts": {
+    "start": "node server.cjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

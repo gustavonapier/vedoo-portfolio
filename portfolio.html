@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gustavo Azevedo · Vedoo</title>
+  <meta name="description" content="Gustavo Azevedo, designer e desenvolvedor por trás da Vedoo: sites que fazem as pessoas pararem pra olhar.">
+  <meta name="theme-color" content="#081013">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Gustavo Azevedo · Vedoo">
+  <meta property="og:description" content="Gustavo Azevedo, designer e desenvolvedor por trás da Vedoo: sites que fazem as pessoas pararem pra olhar.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <link rel="icon" href="assets/marca/vedoo-avatar.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/marca/vedoo-avatar.png">
+  <link rel="preload" href="assets/foto-principal.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="assets/fonts/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/destaque-unbounded.css">
+  <link rel="stylesheet" href="assets/escala-desktop.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
+  <script src="projects.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/preview.js" defer></script>
+</head>
+<body class="page-home page-portfolio">
+  <!-- Abertura: cortina com o símbolo desenhando. Decorativa. -->
+  <div class="intro" aria-hidden="true">
+    <svg class="intro__mark" viewBox="2170 -596 982.4 629">
+      <defs><clipPath id="intro-lens"><circle cx="2484.5" cy="-281.5" r="294.5"/></clipPath></defs>
+      <circle class="intro__lens" cx="2837.9" cy="-281.5" r="294.5" clip-path="url(#intro-lens)"/>
+      <circle class="intro__ring" pathLength="1" cx="2484.5" cy="-281.5" r="264.5"/>
+      <circle class="intro__ring intro__ring--b" pathLength="1" cx="2837.9" cy="-281.5" r="264.5"/>
+    </svg>
+  </div>
+
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="header">
+    <a class="header__logo" href="index.html" aria-label="Vedoo, de Gustavo Azevedo. Início"><img src="assets/marca/vedoo-logo-claro.svg" alt="Vedoo" width="132" height="35"><span class="header__by" aria-hidden="true">por Gustavo Azevedo</span></a>
+    <nav class="header__nav" aria-label="Páginas">
+      <a href="sobre.html">Sobre</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+      <span class="menu-toggle__lines" aria-hidden="true"></span><span>Menu</span>
+    </button>
+  </header>
+
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="visually-hidden">Gustavo Azevedo — design e desenvolvimento de sites</h1>
+
+      <div class="hero__stage" aria-hidden="true"><svg class="hero__art--wide" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMin meet">
+        <defs>
+          <clipPath id="clip-wide"><rect x="0" y="150" width="1440" height="440"/></clipPath>
+          <linearGradient id="shade-wide" x1="0" y1="0" x2="0" y2="1"><stop offset=".55" stop-color="#050a0c" stop-opacity="0"/><stop offset="1" stop-color="#050a0c" stop-opacity=".75"/></linearGradient>
+        </defs>
+        <image class="hero__photo" href="assets/foto-principal.webp" x="-80" y="0" width="1600" height="900" preserveAspectRatio="xMidYMin slice"/>
+        <rect class="hero__shade" width="1440" height="900" fill="url(#shade-wide)"/>
+        <g clip-path="url(#clip-wide)">
+          <text class="hero__name" x="40" y="570" font-size="500" textLength="1290" lengthAdjust="spacingAndGlyphs"><tspan>GUS</tspan><tspan class="hero__stroke">TAV</tspan><tspan>O</tspan></text>
+        </g>
+      </svg></div>
+
+      <svg class="hero__art hero__art--tall" viewBox="0 0 600 1200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <clipPath id="clip-tall"><rect x="0" y="470" width="600" height="190"/></clipPath>
+          <linearGradient id="shade-tall" x1="0" y1="0" x2="0" y2="1"><stop offset=".5" stop-color="#050a0c" stop-opacity="0"/><stop offset=".9" stop-color="#050a0c" stop-opacity=".85"/></linearGradient>
+        </defs>
+        <image class="hero__photo" href="assets/foto-principal.webp" x="-975" y="0" width="2133" height="1200" preserveAspectRatio="xMidYMin slice"/>
+        <rect width="600" height="1200" fill="url(#shade-tall)"/>
+        <g clip-path="url(#clip-tall)">
+          <text class="hero__name" x="40" y="640" font-size="201" textLength="520" lengthAdjust="spacingAndGlyphs"><tspan>GUS</tspan><tspan class="hero__stroke">TAV</tspan><tspan>O</tspan></text>
+        </g>
+      </svg>
+
+      <p class="hero__year reveal-up" aria-hidden="true">2K26<span>.</span></p>
+      <ul class="hero__services reveal-up" aria-label="Serviços">
+        <li>Landing pages</li>
+        <li>Sites institucionais</li>
+        <li>E-commerce</li>
+        <li>Direção digital</li>
+      </ul>
+      <div class="hero__intro reveal-up">
+        <p class="eyebrow">Dev &amp; web design</p>
+        <p>Sites com presença de marca, feitos pra serem lembrados e pra vender.</p>
+      </div>
+      <a class="hero__cta btn reveal-up" href="contato.html">Iniciar um projeto <span aria-hidden="true">→</span></a>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
+      <p class="label"><span class="dot"></span>Manifesto</p>
+      <div class="knockout" aria-hidden="true">
+        <span class="knockout__ghost">IMPACTO</span>
+        <span class="knockout__word">IMPACTO</span>
+      </div>
+      <div class="manifesto__body">
+        <h2 id="manifesto-title" class="manifesto__title reveal">Eu não faço só sites.<br>Faço <em>primeiras impressões.</em></h2>
+        <p class="manifesto__side reveal">Cada projeto começa por uma pergunta: o que o seu cliente precisa sentir nos primeiros 3 segundos? Design, código e performance vêm pra sustentar isso.</p>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <h2 id="cta-title" class="cta-band__title">Tem um projeto em mente?<br><em>Vamos conversar.</em></h2>
+      <a class="btn" href="contato.html">Iniciar um projeto <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <img src="assets/marca/vedoo-logo-claro.svg" alt="Vedoo" width="180" height="47">
+      <p class="footer__tag">Sites que fazem <em>parar pra olhar.</em></p>
+    </div>
+    <div class="footer__bottom">
+      <nav aria-label="Rodapé"><a href="index.html">Início</a><a href="portfolio.html">Portfólio</a><a href="sobre.html">Sobre</a><a href="projetos.html">Projetos</a><a href="contato.html">Contato</a><a href="https://instagram.com/gustavovedoo" target="_blank" rel="noopener">Instagram</a></nav>
+      <p>© <span id="year">2026</span> Vedoo · Gustavo Azevedo</p>
+    </div>
+  </footer>
+
+  <dialog id="menu" class="menu" aria-labelledby="menu-title">
+    <div class="menu__head">
+      <img src="assets/marca/vedoo-logo-claro.svg" alt="" width="120" height="32">
+      <button class="menu__close" type="button" aria-label="Fechar menu">Fechar <span aria-hidden="true">×</span></button>
+    </div>
+    <h2 id="menu-title" class="visually-hidden">Navegação</h2>
+    <nav class="menu__links" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <p class="menu__foot">Sites que fazem <em>parar pra olhar.</em></p>
+  </dialog>
+</body>
+</html>

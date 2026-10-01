@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vedoo · Studio</title>
+  <meta name="description" content="Vedoo é o estúdio de Gustavo Azevedo: design e desenvolvimento de sites que fazem as pessoas pararem pra olhar.">
+  <meta name="theme-color" content="#081013">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Vedoo · Studio">
+  <meta property="og:description" content="Vedoo é o estúdio de Gustavo Azevedo: design e desenvolvimento de sites que fazem as pessoas pararem pra olhar.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <link rel="icon" href="assets/marca/vedoo-avatar.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/marca/vedoo-avatar.png">
+  <link rel="preload" href="assets/fonts/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/destaque-unbounded.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
+  <script src="projects.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/mesa.js" defer></script>
+  <script src="assets/js/preview.js" defer></script>
+</head>
+<body class="page-mesa">
+  <!-- Abertura: cortina com o símbolo desenhando. Decorativa. -->
+  <div class="intro" aria-hidden="true">
+    <svg class="intro__mark" viewBox="2170 -596 982.4 629">
+      <defs><clipPath id="intro-lens"><circle cx="2484.5" cy="-281.5" r="294.5"/></clipPath></defs>
+      <circle class="intro__lens" cx="2837.9" cy="-281.5" r="294.5" clip-path="url(#intro-lens)"/>
+      <circle class="intro__ring" pathLength="1" cx="2484.5" cy="-281.5" r="264.5"/>
+      <circle class="intro__ring intro__ring--b" pathLength="1" cx="2837.9" cy="-281.5" r="264.5"/>
+    </svg>
+  </div>
+
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="header">
+    <a class="header__logo" href="index.html" aria-label="Vedoo, de Gustavo Azevedo. Início"><img src="assets/marca/vedoo-logo-claro.svg" alt="Vedoo" width="132" height="35"><span class="header__by" aria-hidden="true">por Gustavo Azevedo</span></a>
+    <nav class="header__nav" aria-label="Páginas">
+      <a href="sobre.html">Sobre</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+      <span class="menu-toggle__lines" aria-hidden="true"></span><span>Menu</span>
+    </button>
+  </header>
+
+  <main id="conteudo">
+    <!-- MESA: projetos reais em janelas que dá pra arrastar -->
+    <section class="mesa" aria-labelledby="mesa-title">
+      <div class="mesa__board" id="mesa-board">
+        <div class="mesa__deck" id="mesa-deck">
+      <a class="win win--lt" href="vet/" draggable="false" data-win data-preview="vet/" data-title="Cauda Leve Vet" data-tipo="Site institucional · clínica veterinária" data-url="vedoo.studio/vet" data-poster="assets/mesa/vet.webp" style="--x:70px;--y:190px;--w:380px;--h:238px;--r:-7deg;--z:2;--i:1" aria-label="Cauda Leve Vet, site de clínica veterinária. Ver preview">
+        <span class="win__bar" aria-hidden="true"><i></i><i></i><i></i><span>vedoo.studio/vet</span></span>
+        <span class="win__body"><img src="assets/mesa/vet.webp" alt="" width="380" loading="eager" draggable="false"></span>
+      </a>
+      <a class="win win--lt win--empty" href="contato.html" draggable="false" data-win style="--x:1030px;--y:120px;--w:360px;--h:225px;--r:6deg;--z:3;--i:2" aria-label="Seu negócio pode ser o próximo. Iniciar um projeto">
+        <span class="win__bar" aria-hidden="true"><i></i><i></i><i></i><span>seu-negocio.com.br</span></span>
+        <span class="win__body"><span class="win__empty"><em>Seu negócio</em> aqui.<small>Vamos conversar →</small></span></span>
+      </a>
+      <a class="win" href="burger/" draggable="false" data-win data-preview="burger/" data-title="Burger" data-tipo="Landing page · hamburgueria" data-url="vedoo.studio/burger" data-poster="assets/mesa/burger.webp" style="--x:1045px;--y:460px;--w:370px;--h:231px;--r:-4deg;--z:4;--i:3" aria-label="Burger, site de hamburgueria. Ver preview">
+        <span class="win__bar" aria-hidden="true"><i></i><i></i><i></i><span>vedoo.studio/burger</span></span>
+        <span class="win__body"><img src="assets/mesa/burger.webp" alt="" width="370" loading="eager" draggable="false"></span>
+      </a>
+      <a class="win" href="portfolio.html" draggable="false" data-win style="--x:430px;--y:150px;--w:600px;--h:375px;--r:-2deg;--z:10;--i:0" aria-label="Gustavo Azevedo, portfólio. Abrir">
+        <span class="win__bar" aria-hidden="true"><i class="is-red"></i><i></i><i></i><span>vedoo.studio/portfolio</span></span>
+        <span class="win__body"><img src="assets/mesa/portfolio.webp" alt="" width="600" loading="eager" draggable="false"></span>
+      </a>
+          <div class="cur cur--gustavo" id="cur-gustavo" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 2l7 18 2.5-7.5L19 10z" fill="#F2EBE1" stroke="#081013" stroke-width="1.2"/></svg><b>Gustavo</b></div>
+          <div class="cur cur--voce" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 2l7 18 2.5-7.5L19 10z" fill="#E5383B" stroke="#081013" stroke-width="1.2"/></svg><b>Você</b></div>
+        </div>
+        <h1 id="mesa-title" class="mesa__title">Seu site é o<em>próximo da mesa.</em></h1>
+        <div class="mesa__cta">
+          <a class="btn" href="contato.html">Iniciar um projeto <span aria-hidden="true">→</span></a>
+          <p>Projetos reais<span class="mesa__hint"> · arraste as janelas</span><span class="mesa__hint-m"> · deslize pro lado</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESSO -->
+    <section class="process" id="processo" aria-labelledby="processo-title">
+      <div class="section-head">
+        <p class="label"><span class="dot"></span>Processo</p>
+        <h2 id="processo-title" class="display reveal">Do rascunho <em>ao ar.</em></h2>
+        <p class="section-head__note reveal">Quatro etapas, sem enrolação. Você fala direto comigo em todas elas.</p>
+      </div>
+      <ol class="process__steps">
+        <li class="step reveal"><span class="step__n">01</span><h3>Conversa</h3><p>Entendo o seu negócio, o seu público e o que o site precisa resolver.</p></li>
+        <li class="step reveal"><span class="step__n">02</span><h3>Direção visual</h3><p>Defino a cara do projeto: referências, cores, tipografia e a primeira tela. Você aprova antes do código.</p></li>
+        <li class="step reveal"><span class="step__n">03</span><h3>Design e código</h3><p>Desenho e programo o site completo: rápido, leve e pronto pro Google e pro celular.</p></li>
+        <li class="step reveal"><span class="step__n">04</span><h3>No ar</h3><p>Publicação, domínio e ajustes finais. E eu continuo por perto depois da entrega.</p></li>
+      </ol>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <h2 id="cta-title" class="cta-band__title">Tem um projeto em mente?<br><em>Vamos conversar.</em></h2>
+      <a class="btn" href="contato.html">Iniciar um projeto <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <img src="assets/marca/vedoo-logo-claro.svg" alt="Vedoo" width="180" height="47">
+      <p class="footer__tag">Sites que fazem <em>parar pra olhar.</em></p>
+    </div>
+    <div class="footer__bottom">
+      <nav aria-label="Rodapé"><a href="index.html">Início</a><a href="portfolio.html">Portfólio</a><a href="sobre.html">Sobre</a><a href="projetos.html">Projetos</a><a href="contato.html">Contato</a><a href="https://instagram.com/gustavovedoo" target="_blank" rel="noopener">Instagram</a></nav>
+      <p>© <span id="year">2026</span> Vedoo · Gustavo Azevedo</p>
+    </div>
+  </footer>
+
+  <dialog id="menu" class="menu" aria-labelledby="menu-title">
+    <div class="menu__head">
+      <img src="assets/marca/vedoo-logo-claro.svg" alt="" width="120" height="32">
+      <button class="menu__close" type="button" aria-label="Fechar menu">Fechar <span aria-hidden="true">×</span></button>
+    </div>
+    <h2 id="menu-title" class="visually-hidden">Navegação</h2>
+    <nav class="menu__links" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <p class="menu__foot">Sites que fazem <em>parar pra olhar.</em></p>
+  </dialog>
+</body>
+</html>

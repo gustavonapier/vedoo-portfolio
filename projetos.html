@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR" class="no-intro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Projetos · Vedoo</title>
+  <meta name="description" content="Sites e landing pages desenhados e programados por Gustavo Azevedo na Vedoo.">
+  <meta name="theme-color" content="#081013">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Projetos · Vedoo">
+  <meta property="og:description" content="Sites e landing pages desenhados e programados por Gustavo Azevedo na Vedoo.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <link rel="icon" href="assets/marca/vedoo-avatar.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/marca/vedoo-avatar.png">
+  <link rel="preload" href="assets/fonts/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/destaque-unbounded.css">
+  <link rel="stylesheet" href="assets/escala-desktop.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
+  <script src="projects.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/preview.js" defer></script>
+</head>
+<body class="page-inner">
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="header">
+    <a class="header__logo" href="index.html" aria-label="Vedoo, de Gustavo Azevedo. Início"><img src="assets/marca/vedoo-logo-claro.svg" alt="Vedoo" width="132" height="35"><span class="header__by" aria-hidden="true">por Gustavo Azevedo</span></a>
+    <nav class="header__nav" aria-label="Páginas">
+      <a href="sobre.html">Sobre</a>
+      <a href="projetos.html" aria-current="page">Projetos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+      <span class="menu-toggle__lines" aria-hidden="true"></span><span>Menu</span>
+    </button>
+  </header>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <p class="label"><span class="dot"></span>Projetos</p>
+      <h1 class="page-hero__title">Trabalhos<br><em>selecionados.</em></h1>
+      <p class="page-hero__note">Sites que desenhei e programei do zero. Clique em um projeto para ver o preview do site funcionando.</p>
+    </section>
+
+    <section class="work">
+      <ul class="work__grid" id="work-grid"></ul>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <h2 id="cta-title" class="cta-band__title">Gostou do que viu?<br><em>O próximo pode ser o seu.</em></h2>
+      <a class="btn" href="contato.html">Iniciar um projeto <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <img src="assets/marca/vedoo-logo-claro.svg" alt="Vedoo" width="180" height="47">
+      <p class="footer__tag">Sites que fazem <em>parar pra olhar.</em></p>
+    </div>
+    <div class="footer__bottom">
+      <nav aria-label="Rodapé"><a href="index.html">Início</a><a href="portfolio.html">Portfólio</a><a href="sobre.html">Sobre</a><a href="projetos.html">Projetos</a><a href="contato.html">Contato</a><a href="https://instagram.com/gustavovedoo" target="_blank" rel="noopener">Instagram</a></nav>
+      <p>© <span id="year">2026</span> Vedoo · Gustavo Azevedo</p>
+    </div>
+  </footer>
+
+  <dialog id="menu" class="menu" aria-labelledby="menu-title">
+    <div class="menu__head">
+      <img src="assets/marca/vedoo-logo-claro.svg" alt="" width="120" height="32">
+      <button class="menu__close" type="button" aria-label="Fechar menu">Fechar <span aria-hidden="true">×</span></button>
+    </div>
+    <h2 id="menu-title" class="visually-hidden">Navegação</h2>
+    <nav class="menu__links" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <p class="menu__foot">Sites que fazem <em>parar pra olhar.</em></p>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf7ef">
+  <meta name="description" content="Cuidado próximo, atenção aos detalhes e carinho em cada fase da vida do seu pet.">
+  <title>Clínica vet — cuidado em cada fase</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/nunito.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Marca o documento antes do primeiro paint para que os estados iniciais das
+       animações não pisquem. Se o GSAP não carregar, app.js remove a classe. -->
+  <script>if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("js");</script>
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#cuidados">Ir para os cuidados</a>
+  <svg class="symbol-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="paw" viewBox="0 0 48 48">
+        <ellipse cx="12" cy="17" rx="5" ry="7" transform="rotate(-24 12 17)"/>
+        <ellipse cx="23" cy="10" rx="5" ry="7" transform="rotate(-8 23 10)"/>
+        <ellipse cx="34" cy="13" rx="5" ry="7" transform="rotate(18 34 13)"/>
+        <ellipse cx="42" cy="23" rx="4.7" ry="6.5" transform="rotate(30 42 23)"/>
+        <path d="M8 35c1-6 7-8 10-13 3-4 7-4 10 0 3 5 10 7 10 14 0 8-8 8-14 5-7-4-18 3-16-6Z"/>
+      </symbol>
+      <symbol id="phone" viewBox="0 0 24 24"><path d="M5.2 3h3l1.7 4.3-2.2 1.5a11.5 11.5 0 0 0 7.5 7.5l1.5-2.2 4.3 1.7v3A2.1 2.1 0 0 1 18.8 21 17.8 17.8 0 0 1 3 5.2 2.1 2.1 0 0 1 5.2 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+      <symbol id="arrow" viewBox="0 0 28 24"><path d="M2 12h22M15 3l9 9-9 9" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="heart" viewBox="0 0 60 60"><path d="M29 54C18 43 1 29 4 15 8-2 24 4 30 17 41 3 57 8 57 22 58 34 40 46 29 54Z"/></symbol>
+    </defs>
+  </svg>
+  <main>
+    <section class="hero canvas" id="inicio" aria-labelledby="hero-title">
+      <header class="site-header">
+        <a class="brand" href="#inicio" aria-label="Clínica vet — início">
+          <svg aria-hidden="true"><use href="#paw"/></svg><span>clínica vet</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Navegação principal">
+          <a class="nav-link active" href="#inicio" aria-current="page">Início</a>
+          <a class="nav-link" href="#cuidados">Cuidados</a>
+          <button class="nav-link" type="button" data-open="about">A clínica</button>
+        </nav>
+        <a class="button header-cta" href="https://wa.me/5521974127756" target="_blank" rel="noopener" aria-label="Contato pelo WhatsApp (abre em nova aba)"><svg aria-hidden="true"><use href="#phone"/></svg>Contato</a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span>
+        </button>
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Navegação no celular" hidden>
+          <a href="#inicio">Início</a><a href="#cuidados">Cuidados</a>
+          <button type="button" data-open="about">A clínica</button>
+          <a href="https://wa.me/5521974127756" target="_blank" rel="noopener" aria-label="Contato pelo WhatsApp (abre em nova aba)">Contato</a>
+        </nav>
+      </header>
+      <div class="stage">
+        <svg class="hero-art" viewBox="0 0 1672 941" aria-hidden="true">
+          <defs>
+            <clipPath id="hero-dog-clip"><path d="M0 108H562V213L592 294 599 449 617 558 649 649 687 727 716 941H0Z"/></clipPath>
+            <clipPath id="hero-cat-clip"><path d="M1232 113H1672V941H1119V817L1162 737 1186 621 1198 459 1207 322Z"/></clipPath>
+          </defs>
+          <path class="hero-wave" fill="#fbf7ef" d="M0 753C230 667 371 788 673 817S1242 833 1672 755V941H0Z"/>
+          <!-- hero-blob-ext continua os blobs azuis da foto para fora do palco quando a
+               janela é mais larga que ele; sobem junto com os pets na entrada (app.js). -->
+          <g class="hero-pet hero-pet-dog"><path class="hero-blob-ext" data-hero fill="#d0ebf5" d="M3 124C-120 118-260 140-420 190S-900 300-3000 330V790C-1200 800-400 790 3 752Z"/><image href="assets/hero-reference.webp" width="1672" height="941" clip-path="url(#hero-dog-clip)" data-hero/><g class="hero-rays" data-hero><path class="hero-rays-lines" d="M87 182 102 203M62 212 91 222M59 248 85 243"/></g></g>
+          <g class="hero-pet hero-pet-cat"><path class="hero-blob-ext" data-hero fill="#cce9f2" d="M1669 136C1790 130 1930 150 2090 200S2570 310 4672 340V800C2870 810 2070 800 1669 759Z"/><image href="assets/hero-reference.webp" width="1672" height="941" clip-path="url(#hero-cat-clip)" data-hero/><g class="hero-rays" data-hero><path class="hero-rays-lines" d="M1551 309Q1537 322 1530 343M1580 329Q1561 335 1549 351"/></g></g>
+        </svg>
+        <div class="hero-copy">
+          <h1 id="hero-title" data-split><span class="hero-intro">Cuidado que faz</span><span class="hero-display">o rabinho<br>balançar.</span></h1>
+          <p data-hero>Saúde e carinho em cada fase da vida.</p>
+          <button class="button hero-cta" type="button" data-hero data-open="booking">Agendar consulta <svg aria-hidden="true"><use href="#arrow"/></svg></button>
+          <button class="text-link hero-link" type="button" data-hero data-open="about">Conheça a clínica</button>
+        </div>
+        <svg class="hero-heart" aria-hidden="true" data-hero><use href="#heart"/></svg>
+      </div>
+    </section>
+
+    <section class="journey canvas" id="cuidados" aria-labelledby="journey-title">
+      <svg class="journey-wave" viewBox="0 0 1672 90" preserveAspectRatio="none" aria-hidden="true"><path fill="#fbf7ef" d="M0 0H1672V15C1494 62 1314 24 1171 16S875 11 738 53 350-30 0 44Z"/></svg>
+      <div class="stage">
+        <div class="journey-heading">
+          <p class="eyebrow" data-reveal>Em todas as fases
+            <svg class="title-rays" viewBox="0 0 45 50" aria-hidden="true"><path d="m8 21 6-15m10 26 13-9m-9 24 15-1" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
+          </p>
+          <h2 id="journey-title" data-split>Carinho que<br>cresce com eles.</h2>
+        </div>
+        <p class="journey-intro" data-reveal>Da primeira descoberta <br>aos dias mais tranquilos.</p>
+        <svg class="journey-track" viewBox="0 0 1672 941" aria-hidden="true">
+          <!-- O caminho fica acima das fotos (o pontilhado foi retirado de journey-photos.png).
+               track-cut esconde os trechos que passariam sobre os pets; track-mask revela o
+               pontilhado ao longo da curva conforme o scroll (app.js). Sem animação, o traço
+               da máscara fica inteiro e o caminho aparece completo. -->
+          <defs>
+            <mask id="track-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="1672" height="941">
+              <path fill="#fff" d="M388 0H624V941H388ZM1012 0H1288V941H1012Z"/>
+            </mask>
+            <mask id="track-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1672" height="941">
+              <path class="track-reveal" d="M352 485C493 470 525 545 679 553S904 485 1038 490 1166 389 1291 426" fill="none" stroke="#fff" stroke-width="26" stroke-linecap="round"/>
+            </mask>
+          </defs>
+          <g mask="url(#track-cut)">
+            <path class="track-rail" d="M352 485C493 470 525 545 679 553S904 485 1038 490 1166 389 1291 426" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="4 14"/>
+            <path class="track" d="M352 485C493 470 525 545 679 553S904 485 1038 490 1166 389 1291 426" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="4 14" mask="url(#track-mask)"/>
+          </g>
+          <g class="track-paw" data-at="486"><svg x="462" y="450" width="49" height="49"><use href="#paw"/></svg></g>
+          <g class="track-paw" data-at="1139"><svg x="1115" y="408" width="49" height="49" transform="rotate(-7 1139 432)"><use href="#paw"/></svg></g>
+        </svg>
+        <div class="life-stages">
+          <article class="life-stage stage-puppy" data-phase="puppy" data-at="400">
+            <button class="stage-button" type="button" data-open="care" data-care="puppy" aria-label="Conhecer os cuidados dos primeiros passos">
+              <svg class="stage-picture" viewBox="40 305 485 440" role="img" aria-label="Filhote de golden retriever">
+                <defs><clipPath id="puppy-clip"><path d="M35 320H525V729H35Z"/></clipPath></defs>
+                <image href="assets/journey-photos.webp" width="1672" height="941" clip-path="url(#puppy-clip)"/>
+              </svg>
+              <h3>Primeiros passos</h3><p>Consultas e vacinação.</p>
+            </button>
+          </article>
+          <article class="life-stage stage-adult" data-phase="adult" data-at="640">
+            <button class="stage-button" type="button" data-open="care" data-care="adult" aria-label="Conhecer os cuidados da vida adulta">
+              <svg class="stage-picture" viewBox="610 295 425 430" role="img" aria-label="Gato adulto laranja e branco">
+                <defs><clipPath id="adult-clip"><path d="M610 303H1035V700H610Z"/></clipPath></defs>
+                <image href="assets/journey-photos.webp" width="1672" height="941" clip-path="url(#adult-clip)"/>
+              </svg>
+              <h3>Vida adulta</h3><p>Rotina e prevenção.</p>
+            </button>
+          </article>
+          <article class="life-stage stage-senior" data-phase="senior" data-at="1200">
+            <button class="stage-button" type="button" data-open="care" data-care="senior" aria-label="Conhecer os cuidados da melhor idade">
+              <svg class="stage-picture" viewBox="1120 305 530 425" role="img" aria-label="Golden retriever idoso deitado">
+                <defs><clipPath id="senior-clip"><path d="M1120 305H1650V701H1120Z"/></clipPath></defs>
+                <image href="assets/journey-photos.webp" width="1672" height="941" clip-path="url(#senior-clip)"/>
+              </svg>
+              <h3>Melhor idade</h3><p>Acompanhamento e atenção.</p>
+            </button>
+          </article>
+        </div>
+
+        <button class="button button-lighten journey-cta" type="button" data-open="guide" data-reveal>Encontre o cuidado ideal</button>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer canvas" id="contato" aria-labelledby="footer-title">
+    <div class="stage">
+      <!-- A onda segue a da foto dentro do palco e continua além dele (overflow visível). -->
+      <svg class="footer-wave" viewBox="0 0 1672 941" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="#fbf7ef" d="M-3000 700C-1600 700-400 668 0 590 247 542 454 625 759 628S1190 554 1672 609C2150 664 2800 680 4672 680V1200H-3000Z"/>
+      </svg>
+      <div class="footer-copy">
+        <h2 id="footer-title" data-split>Vamos cuidar<br>de quem<br>você ama?</h2>
+        <p data-reveal>O próximo cuidado começa <br>com uma conversa.</p>
+        <button class="button footer-cta" type="button" data-open="contact" data-reveal>Converse com a equipe <svg aria-hidden="true"><use href="#arrow"/></svg></button>
+      </div>
+      <svg class="footer-pets" viewBox="0 0 940 675" role="img" aria-label="Shih-tzu e gato preto juntos, com as patinhas apoiadas na ondinha do rodapé">
+        <!-- As bordas de cima e das laterais esmaecem para a foto se fundir ao azul da
+             jornada e ao fundo que continua além do palco. -->
+        <defs>
+          <linearGradient id="footer-fade-x"><stop offset="0" stop-color="#000"/><stop offset=".03" stop-color="#fff"/><stop offset=".955" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+          <linearGradient id="footer-fade-y" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000"/><stop offset=".08" stop-color="#fff"/><stop offset=".97" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+          <mask id="footer-mask-y" maskUnits="userSpaceOnUse" x="0" y="0" width="940" height="675"><rect width="940" height="675" fill="url(#footer-fade-y)"/></mask>
+          <mask id="footer-pets-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="940" height="675"><rect width="940" height="675" fill="url(#footer-fade-x)" mask="url(#footer-mask-y)"/></mask>
+        </defs>
+        <image href="assets/footer-reference.webp" width="1672" height="941" mask="url(#footer-pets-mask)"/>
+      </svg>
+      <div class="footer-info">
+        <div class="footer-identity" data-reveal>
+          <a class="footer-brand" href="#inicio" aria-label="Clínica vet — voltar ao início"><svg aria-hidden="true"><use href="#paw"/></svg><span>clínica vet</span></a>
+          <p>Carinho em cada detalhe.</p>
+        </div>
+        <nav class="footer-nav footer-explore" aria-label="Explore a clínica" data-reveal>
+          <h3>Explore</h3>
+          <button type="button" data-open="guide">Serviços</button>
+          <a href="#cuidados">Cada fase</a>
+          <button type="button" data-open="about">Nossa equipe</button>
+        </nav>
+        <nav class="footer-nav footer-contact" aria-label="Canais de contato" data-reveal>
+          <h3>Fale com a gente</h3>
+          <a href="https://wa.me/5521974127756" target="_blank" rel="noopener" aria-label="WhatsApp (abre em nova aba)">WhatsApp</a>
+          <a href="https://instagram.com/47gustavoo" target="_blank" rel="noopener" aria-label="Instagram (abre em nova aba)">Instagram</a>
+          <button type="button" data-open="contact" data-care="location">Como chegar</button>
+        </nav>
+        <div class="footer-legal" data-reveal><span class="footer-copyright">© 2026 clínica vet. Todos os direitos reservados.</span><span class="footer-credit"><a class="vd-sign" href="https://vedoo.studio/?ref=cauda-leve-vet" target="_blank" rel="noopener" aria-label="Site desenvolvido por Gustavo, da Vedoo (abre em nova aba)"><span>Desenvolvimento</span><svg class="vd-sign__mark" viewBox="0 0 28 18" aria-hidden="true"><clipPath id="vd-sign-clip"><circle cx="9" cy="9" r="7"/></clipPath><g clip-path="url(#vd-sign-clip)"><circle class="vd-sign__lens" cx="19" cy="9" r="7"/></g><circle cx="9" cy="9" r="7"/><circle class="vd-sign__b" cx="19" cy="9" r="7"/></svg><span class="vd-sign__who">@gustavovedoo</span></a></span><button type="button" data-open="privacy">Privacidade</button></div>
+      </div>
+    </div>
+  </footer>
+  <dialog class="brand-dialog" id="brand-dialog" aria-labelledby="dialog-title" data-lenis-prevent>
+    <button class="dialog-close" type="button" aria-label="Fechar janela"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <div id="dialog-content"></div>
+  </dialog>
+</body>
+</html>
