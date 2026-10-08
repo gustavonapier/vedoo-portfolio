@@ -1,0 +1,52 @@
+/* ==========================================================
+   Tema da página Contato (contato.html)
+   A estrutura e as medidas da conversa continuam no styles.css (.conversa, .chat).
+   Aqui só muda a cara: fundo preto, quadro e balões no estilo do quadro de conversa do Início,
+   e a foto do personagem no lugar do logo. Este arquivo carrega por último, depois do escala-desktop.css.
+   ========================================================== */
+.page-contato { background: #0B1114; }
+.page-contato .conversa { background: #0B1114; }
+.page-contato .conversa::before { display: none; }
+
+/* o quadro */
+.page-contato .chat { border-radius: 28px; background: #141C20; box-shadow: 0 44px 70px -34px rgba(0, 0, 0, .8), 0 0 0 1px rgba(239, 237, 232, .1); }
+.page-contato .chat__head { gap: 12px; padding: 16px 20px; border-bottom-color: rgba(239, 237, 232, .12); }
+.page-contato .chat__ava { flex: none; display: block; width: 46px; height: 46px; border-radius: 50%; overflow: hidden; background: #222224; box-shadow: 0 0 0 1px rgba(239, 237, 232, .2); }
+.page-contato .chat__ava img { width: 100%; height: 100%; border-radius: 0; object-fit: cover; }
+.page-contato .chat__head b { font: 400 15px/1.1 "Unbounded", system-ui, sans-serif; letter-spacing: -.045em; }
+.page-contato .chat__head small { display: flex; align-items: center; margin-top: 5px; font: 400 11px/1 "JetBrains Mono", ui-monospace, Consolas, monospace; letter-spacing: .04em; color: rgba(239, 237, 232, .6); }
+.page-contato .chat__head small i { margin-right: 7px; background: #46D07F; }
+
+/* as falas */
+.page-contato .chat__msgs { gap: 8px; padding: 22px 20px; }
+.page-contato .chat__b { align-self: flex-start; padding: 12px 15px; border-radius: 4px 16px 16px 16px; background: #222D33; font-size: 15.5px; line-height: 1.4; }
+.page-contato .chat__b--me { align-self: flex-end; margin-block: 6px; border-radius: 16px 16px 4px 16px; background: #EFEDE8; color: #0B1114; }
+.page-contato .chat__typing { border-radius: 4px 16px 16px 16px; background: #222D33; }
+
+/* as respostas prontas: botões vermelhos */
+.page-contato .chat__quick { gap: 8px; margin-top: 8px; }
+.page-contato .chat__chip { padding: 13px 17px; border: 0; border-radius: 14px; background: var(--red); color: #fff; font: 600 15px/1.25 var(--text); transition: background .25s, color .25s; }
+.page-contato .chat__chip:hover { background: #fff; color: #0B1114; }
+.page-contato .chat__summary { border-radius: 16px; background: rgba(239, 237, 232, .05); border-color: rgba(239, 237, 232, .14); }
+
+/* o campo de escrever */
+.page-contato .chat__foot { gap: 10px; padding: 16px 20px; border-top-color: rgba(239, 237, 232, .12); }
+.page-contato .chat__foot input { padding: 15px 18px; border: 1px solid rgba(239, 237, 232, .22); border-radius: 14px; background: rgba(239, 237, 232, .05); }
+.page-contato .chat__foot input::placeholder { color: rgba(239, 237, 232, .5); }
+.page-contato .chat__foot input:focus { border-color: rgba(239, 237, 232, .7); }
+.page-contato .chat__foot button { width: 52px; height: 52px; border-radius: 14px; background: #EFEDE8; color: #0B1114; transition: background .25s, color .25s; }
+.page-contato .chat__foot button:hover { background: var(--red); color: #fff; }
+
+/* "Prefere falar direto?": os contatos diretos, pra quem não quer passar pela conversa */
+.page-contato .conversa__alt { margin-top: auto; padding-top: 32px; }
+.page-contato .conversa__alt-k { margin: 0; font: 400 clamp(18px, 1.5vw, 22px)/1.15 "Unbounded", system-ui, sans-serif; letter-spacing: -.045em; }
+.page-contato .conversa__alt-t { margin: 8px 0 0; max-width: 36ch; font-size: 14.5px; line-height: 1.5; color: var(--mute); }
+.page-contato .conversa__direct { margin: 16px 0 0; padding: 0; gap: 0; font-size: 15.5px; border-top: 1px solid rgba(239, 237, 232, .14); max-width: 400px; }
+.page-contato .conversa__direct li { align-items: center; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid rgba(239, 237, 232, .14); }
+.page-contato .conversa__direct a { font-weight: 600; }
+@media (max-width: 900px) {
+  /* no celular os contatos diretos vêm antes da conversa, e a barrinha de progresso fica colada nela */
+  .page-contato .conversa__alt { order: 0; margin-top: 30px; padding-top: 0; }
+  .page-contato .conversa__direct { order: 0; max-width: none; }
+  .page-contato .conversa__progress { order: 1; margin-top: 34px; }
+}

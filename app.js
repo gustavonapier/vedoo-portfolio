@@ -6,8 +6,8 @@ root.classList.add('motion');
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 if (!location.hash) window.scrollTo(0, 0);
 
-/* ---------- Abertura (só na página inicial) ---------- */
-// A sequência roda em CSS toda vez que a página inicial carrega. Aqui só marcamos o fim.
+/* ---------- Abertura (só no portfolio.html) ---------- */
+// A sequência roda em CSS toda vez que a página carrega. Aqui só marcamos o fim.
 const intro = document.querySelector('.intro');
 const goLive = () => root.classList.add('is-live');
 if (reduceMotion || !intro || root.classList.contains('no-intro')) {
@@ -34,40 +34,6 @@ menu.addEventListener('close', () => {
   trigger.setAttribute('aria-expanded', 'false');
   trigger.focus({ preventScroll: true });
 });
-
-/* ---------- Página de projetos ---------- */
-const grid = document.querySelector('#work-grid');
-if (grid) {
-  const projects = window.VEDOO_PROJECTS || [];
-  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-
-  projects.forEach(p => {
-    const live = p.status === 'no-ar' && p.link;
-    const tag = live ? 'a' : 'div';
-    const media = p.imagem
-      ? `<img src="${esc(p.imagem)}" alt="" loading="lazy">`
-      : `<img src="assets/marca/vedoo-simbolo-claro.svg" alt=""><span>Em breve</span>`;
-    const li = document.createElement('li');
-    li.className = 'work__item reveal';
-    li.innerHTML = `
-      <${tag} class="work__card"${live ? ` href="${esc(p.link)}" data-preview="${esc(p.link)}" data-title="${esc(p.nome)}" data-tipo="${esc(p.tipo)}" data-url="vedoo.studio/${esc(p.link.replace(/\/$/, ''))}" data-poster="${esc(p.preview || p.imagem || '')}"` : ''}>
-        <div class="work__media${p.imagem ? '' : ' work__media--empty'}">${media}</div>
-        <div class="work__meta">
-          <h2 class="work__name">${esc(p.nome)}</h2>
-          <p class="work__info">${esc(p.tipo)}<br>${live ? esc(p.ano) : 'Em breve'}</p>
-        </div>
-      </${tag}>`;
-    grid.appendChild(li);
-  });
-
-  const next = document.createElement('li');
-  next.className = 'work__item work__item--next reveal';
-  next.innerHTML = `
-    <a class="work__card" href="contato.html">
-      <div class="work__media"><p>Seu projeto<br><em>pode ser o próximo.</em><span>Vamos conversar →</span></p></div>
-    </a>`;
-  grid.appendChild(next);
-}
 
 /* ---------- Página de contato ---------- */
 const brief = document.querySelector('#brief');
@@ -123,4 +89,5 @@ if ('IntersectionObserver' in window && !reduceMotion) {
 }
 
 /* ---------- Ano no rodapé ---------- */
-document.querySelector('#year').textContent = new Date().getFullYear();
+const year = document.querySelector('#year'); // a página de erro não tem rodapé
+if (year) year.textContent = new Date().getFullYear();

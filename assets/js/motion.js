@@ -14,8 +14,10 @@
   const hasIntro = !!document.querySelector('.intro') && !root.classList.contains('no-intro');
 
   /* ---------- Lenis: rolagem suave ---------- */
+  // Nas páginas claras (Início e Sobre) a rolagem é a normal do navegador: é mais leve,
+  // e os links internos (#contato...) continuam suaves pelo "scroll-behavior" do CSS.
   let lenis = null;
-  if (window.Lenis) {
+  if (window.Lenis && !document.body.classList.contains('page-gustavo')) {
     lenis = new window.Lenis({
       duration: 1.15,
       easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -124,7 +126,7 @@
   });
 
   /* ---------- Rodapé: logo sobe devagar ---------- */
-  gsap.from('.footer__top img', {
+  if (document.querySelector('.footer')) gsap.from('.footer__top img', {
     yPercent: 60,
     autoAlpha: 0,
     ease: 'none',

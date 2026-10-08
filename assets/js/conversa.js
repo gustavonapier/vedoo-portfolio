@@ -14,12 +14,15 @@
   const stepLabel = document.getElementById('conversa-step');
   const bars = document.querySelectorAll('.conversa__progress i');
   const answers = {};
+  // Quem vem do quadro do Início chega com o assunto já escolhido (contato.html?assunto=novo).
+  const ASSUNTOS = { novo: 'Quero um site novo', reforma: 'Quero reformar o meu site', loja: 'Preciso de uma loja virtual', duvida: 'Só quero tirar uma dúvida' };
+  const assunto = ASSUNTOS[new URLSearchParams(location.search).get('assunto')] || '';
   let step = -1;
   let waiting = false;
 
   // Cada passo: o que eu pergunto, onde guardo a resposta, respostas rápidas e se dá pra pular.
   const STEPS = [
-    { key: 'nome', ask: () => ['Oi! Eu sou o Gustavo.', '<em>Como posso te chamar?</em>'], big: true, placeholder: 'Seu nome' },
+    { key: 'nome', ask: () => ['Oi! Aqui é o Gustavo.', ...(assunto ? [`Vi que você escolheu “${esc(assunto)}”. Boa!`] : []), 'Como posso te chamar?'], placeholder: 'Seu nome' },
     { key: 'negocio', ask: a => [`Prazer, ${esc(a.nome)}! Qual é o seu negócio?`], placeholder: 'Nome da empresa ou do projeto', quick: ['Ainda não tem nome'] },
     { key: 'tipo', ask: () => ['Que tipo de site você está pensando?'], quick: ['Landing page', 'Site institucional', 'E-commerce', 'Ainda não sei'], placeholder: 'Ou escreva…' },
     { key: 'prazo', ask: () => ['Boa. Tem algum prazo ou data importante?'], quick: ['Sem pressa', 'Em até 1 mês', 'O quanto antes'], placeholder: 'Ou escreva a data…' },
@@ -59,6 +62,7 @@
 
   const message = () => {
     const lines = [`Olá, Gustavo! Meu nome é ${answers.nome}.`];
+    if (assunto) lines.push(`Assunto: ${assunto}`);
     if (answers.negocio && answers.negocio !== 'Ainda não tem nome') lines.push(`Negócio: ${answers.negocio}`);
     if (answers.tipo) lines.push(`Preciso de: ${answers.tipo}`);
     if (answers.prazo) lines.push(`Prazo: ${answers.prazo}`);

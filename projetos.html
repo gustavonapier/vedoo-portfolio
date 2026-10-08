@@ -3,21 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Projetos · Vedoo</title>
-  <meta name="description" content="Sites e landing pages desenhados e programados por Gustavo Azevedo na Vedoo.">
+  <title>Projetos · Sites criados pela Vedoo | Gustavo Azevedo</title>
+  <meta name="description" content="Veja os sites e landing pages que Gustavo Azevedo desenhou e programou: restaurantes, clínicas, lojas e mais. Abra cada um e navegue.">
+  <link rel="canonical" href="https://vedoo.com.br/projetos">
   <meta name="theme-color" content="#081013">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Projetos · Vedoo">
-  <meta property="og:description" content="Sites e landing pages desenhados e programados por Gustavo Azevedo na Vedoo.">
-  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:site_name" content="Vedoo">
+  <meta property="og:url" content="https://vedoo.com.br/projetos">
+  <meta property="og:title" content="Projetos · Sites criados pela Vedoo | Gustavo Azevedo">
+  <meta property="og:description" content="Veja os sites e landing pages que Gustavo Azevedo desenhou e programou: restaurantes, clínicas, lojas e mais. Abra cada um e navegue.">
+  <meta property="og:image" content="https://vedoo.com.br/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Vedoo: Dev &amp; Web Design, por Gustavo Azevedo">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/marca/vedoo-avatar.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/marca/vedoo-avatar.png">
   <link rel="preload" href="assets/fonts/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="assets/destaque-unbounded.css">
-  <link rel="stylesheet" href="assets/escala-desktop.css">
   <script>document.documentElement.classList.add('js');</script>
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
@@ -25,14 +31,16 @@
   <script src="projects.js" defer></script>
   <script src="app.js" defer></script>
   <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/mesa.js" defer></script>
   <script src="assets/js/preview.js" defer></script>
 </head>
-<body class="page-inner">
+<body class="page-mesa">
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
   <header class="header">
     <a class="header__logo" href="index.html" aria-label="Vedoo, de Gustavo Azevedo. Início"><img src="assets/marca/vedoo-logo-claro.svg" alt="Vedoo" width="132" height="35"><span class="header__by" aria-hidden="true">por Gustavo Azevedo</span></a>
     <nav class="header__nav" aria-label="Páginas">
-      <a href="sobre.html">Sobre</a>
+      <a href="index.html">Início</a>
+      <a href="gustavo.html">Sobre</a>
       <a href="projetos.html" aria-current="page">Projetos</a>
       <a href="contato.html">Contato</a>
     </nav>
@@ -42,29 +50,63 @@
   </header>
 
   <main id="conteudo">
-    <section class="page-hero">
-      <p class="label"><span class="dot"></span>Projetos</p>
-      <h1 class="page-hero__title">Trabalhos<br><em>selecionados.</em></h1>
-      <p class="page-hero__note">Sites que desenhei e programei do zero. Clique em um projeto para ver o preview do site funcionando.</p>
+    <!-- MESA: todos os projetos em janelas que dá pra arrastar.
+         As janelas de projeto são montadas pelo assets/js/mesa.js a partir do projects.js, quatro por vez;
+         as setas em cima do botão "Começar o meu" trocam as janelas da mesa. A janela vazia e os cursores ficam sempre. -->
+    <section class="mesa" aria-labelledby="mesa-title">
+      <div class="mesa__board" id="mesa-board">
+        <div class="mesa__deck" id="mesa-deck">
+          <a class="win win--lt win--empty" href="contato.html" draggable="false" data-win style="--x:1030px;--y:112px;--w:360px;--h:225px;--r:6deg;--z:3;--i:2" aria-label="Seu negócio pode ser o próximo. Iniciar um projeto">
+            <span class="win__bar" aria-hidden="true"><i></i><i></i><i></i><span>seu-negocio.com.br</span></span>
+            <span class="win__body"><span class="win__empty"><em>Seu negócio</em> aqui.<small>Vamos conversar →</small></span></span>
+          </a>
+          <div class="cur cur--gustavo" id="cur-gustavo" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 2l7 18 2.5-7.5L19 10z" fill="#F2EBE1" stroke="#081013" stroke-width="1.2"/></svg><b>Gustavo</b></div>
+          <div class="cur cur--voce" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 2l7 18 2.5-7.5L19 10z" fill="#E5383B" stroke="#081013" stroke-width="1.2"/></svg><b>Você</b></div>
+        </div>
+        <h1 id="mesa-title" class="mesa__title">Seu site é o<em>próximo da mesa.</em></h1>
+        <div class="mesa__cta">
+          <!-- Paginação da mesa: só setas e contador. Aparece quando há mais projetos do que cabem de uma vez. -->
+          <div class="mesa__pager" id="mesa-pager" hidden>
+            <button type="button" data-dir="-1" aria-label="Janelas anteriores"><span aria-hidden="true">←</span></button>
+            <p aria-live="polite"><span class="visually-hidden">Mesa </span><b id="mesa-page">01</b> / <span id="mesa-pages">01</span></p>
+            <button type="button" class="mesa__more" data-dir="1" aria-label="Próximas janelas"><span aria-hidden="true">→</span></button>
+          </div>
+          <a class="btn" href="contato.html">Começar o meu</a>
+          <p><span class="mesa__hint">Arraste as janelas · clique pra abrir</span><span class="mesa__hint-m">Deslize pro lado · toque pra abrir</span></p>
+        </div>
+      </div>
     </section>
 
-    <section class="work">
-      <ul class="work__grid" id="work-grid"></ul>
+    <!-- PROCESSO: bloco claro no meio da página escura, com ondas em cima e embaixo (as mesmas do Início) -->
+    <div class="onda" aria-hidden="true"><svg viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 52Q120 6 240 52T480 52T720 52T960 52T1200 52T1440 52T1680 52T1920 52T2160 52T2400 52T2640 52T2880 52V120H0Z"/></svg><svg viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 72Q180 28 360 72T720 72T1080 72T1440 72T1800 72T2160 72T2520 72T2880 72V120H0Z"/></svg></div>
+    <section class="process" id="processo" aria-labelledby="processo-title">
+      <div class="section-head">
+        <p class="label"><span class="dot"></span>Processo</p>
+        <h2 id="processo-title" class="display reveal">Do rascunho <em>ao ar.</em></h2>
+        <p class="section-head__note reveal">Quatro etapas, sem enrolação. Você fala direto comigo em todas elas.</p>
+      </div>
+      <ol class="process__steps">
+        <li class="step reveal"><span class="step__n">01</span><h3>Conversa</h3><p>Entendo o seu negócio, o seu público e o que o site precisa resolver.</p></li>
+        <li class="step reveal"><span class="step__n">02</span><h3>Direção visual</h3><p>Defino a cara do projeto: referências, cores, tipografia e a primeira tela. Você aprova antes do código.</p></li>
+        <li class="step reveal"><span class="step__n">03</span><h3>Design e código</h3><p>Desenho e programo o site completo: rápido, leve e pronto pro Google e pro celular.</p></li>
+        <li class="step reveal"><span class="step__n">04</span><h3>No ar</h3><p>Publicação, domínio e ajustes finais. E eu continuo por perto depois da entrega.</p></li>
+      </ol>
     </section>
+    <div class="onda onda--baixo" aria-hidden="true"><svg viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 52Q120 6 240 52T480 52T720 52T960 52T1200 52T1440 52T1680 52T1920 52T2160 52T2400 52T2640 52T2880 52V120H0Z"/></svg><svg viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 72Q180 28 360 72T720 72T1080 72T1440 72T1800 72T2160 72T2520 72T2880 72V120H0Z"/></svg></div>
 
     <section class="cta-band" aria-labelledby="cta-title">
-      <h2 id="cta-title" class="cta-band__title">Gostou do que viu?<br><em>O próximo pode ser o seu.</em></h2>
-      <a class="btn" href="contato.html">Iniciar um projeto <span aria-hidden="true">→</span></a>
+      <h2 id="cta-title" class="cta-band__title">Gostou do que viu?<br><em>Me conta a sua ideia.</em></h2>
+      <a class="btn" href="contato.html">Começar a conversa</a>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer__top">
       <img src="assets/marca/vedoo-logo-claro.svg" alt="Vedoo" width="180" height="47">
-      <p class="footer__tag">Sites que fazem <em>parar pra olhar.</em></p>
+      <p class="footer__tag">Seu negócio merece <em>ser lembrado.</em></p>
     </div>
     <div class="footer__bottom">
-      <nav aria-label="Rodapé"><a href="index.html">Início</a><a href="portfolio.html">Portfólio</a><a href="sobre.html">Sobre</a><a href="projetos.html">Projetos</a><a href="contato.html">Contato</a><a href="https://instagram.com/gustavovedoo" target="_blank" rel="noopener">Instagram</a></nav>
+      <nav aria-label="Rodapé"><a href="index.html">Início</a><a href="gustavo.html">Sobre</a><a href="projetos.html">Projetos</a><a href="contato.html">Contato</a><a href="https://instagram.com/gustavovedoo" target="_blank" rel="noopener">Instagram</a></nav>
       <p>© <span id="year">2026</span> Vedoo · Gustavo Azevedo</p>
     </div>
   </footer>
@@ -77,12 +119,12 @@
     <h2 id="menu-title" class="visually-hidden">Navegação</h2>
     <nav class="menu__links" aria-label="Navegação principal">
       <a href="index.html">Início</a>
-      <a href="portfolio.html">Portfólio</a>
-      <a href="sobre.html">Sobre</a>
+      
+      <a href="gustavo.html">Sobre</a>
       <a href="projetos.html">Projetos</a>
       <a href="contato.html">Contato</a>
     </nav>
-    <p class="menu__foot">Sites que fazem <em>parar pra olhar.</em></p>
+    <p class="menu__foot">Seu negócio merece <em>ser lembrado.</em></p>
   </dialog>
 </body>
 </html>

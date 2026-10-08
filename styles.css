@@ -445,11 +445,13 @@ a.work__card:hover .work__media img { transform: scale(1.03); }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
 
-/* ---------------- Mesa (página inicial) ----------------
-   A composição é uma prancha de 1440 × 900 que escala inteira (--s vem do app.js).
+/* ---------------- Mesa (página Projetos) ----------------
+   A composição é uma prancha de 1440 × 900 que escala inteira (--s vem do mesa.js).
    As janelas são projetos reais: dá pra arrastar, e ao passar o mouse o print rola. */
-.mesa { position: relative; height: max(100svh, 560px); overflow: hidden; background: radial-gradient(70% 70% at 55% 40%, #0f3a44 0%, var(--deep) 70%); }
-.mesa::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(242, 235, 225, .09) 1px, transparent 1.2px); background-size: calc(22px * var(--s, 1)) calc(22px * var(--s, 1)); background-position: center; pointer-events: none; }
+/* A página Projetos inteira usa o preto das outras páginas (sem o tom esverdeado). */
+.page-mesa { --deep: #0B1114; }
+.mesa { position: relative; height: max(100svh, 560px); overflow: hidden; background: var(--deep); }
+.mesa::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(242, 235, 225, .075) 1px, transparent 1.2px); background-size: calc(22px * var(--s, 1)) calc(22px * var(--s, 1)); background-position: center; pointer-events: none; }
 .mesa__board { --s: 1; position: absolute; left: 50%; top: 50%; width: 1440px; height: 900px; transform: translate(-50%, -50%) scale(var(--s)); }
 .mesa__deck { position: absolute; inset: 0; }
 .win {
@@ -492,6 +494,34 @@ a.work__card:hover .work__media img { transform: scale(1.03); }
 .mesa__cta { position: absolute; right: 40px; bottom: 52px; z-index: 15; text-align: right; }
 .mesa__cta p { margin: 14px 0 0; font-size: 12px; color: var(--mute); }
 .page-mesa .header:not(.is-scrolled) { background: transparent; }
+/* Processo (página Projetos): bloco claro, cor de papel, com ondas em cima e embaixo.
+   As ondas são dois SVGs com o dobro da largura que deslizam meia largura e recomeçam (iguais às do Início). */
+.onda { position: relative; height: clamp(44px, 8vw, 120px); overflow: hidden; margin-bottom: -1px; }
+.onda--baixo { margin: -1px 0 0; transform: scaleY(-1); }
+.onda svg { position: absolute; left: 0; top: 0; width: 200%; height: 100%; fill: #EFEDE8; }
+.onda svg:first-child { opacity: .28; }
+@media (prefers-reduced-motion: no-preference) {
+  .onda svg { animation: onda 22s linear infinite; will-change: transform; }
+  .onda svg:first-child { animation-duration: 34s; animation-direction: reverse; }
+  .onda--baixo svg { animation-duration: 28s; }
+}
+@keyframes onda { to { transform: translateX(-50%); } }
+.page-mesa main > section.process {
+  /* dentro do bloco as cores se invertem: escuro sobre claro */
+  --deep: #EFEDE8; --osso: #0B1114; --mute: rgba(11, 17, 20, .64); --line: rgba(11, 17, 20, .18);
+  padding-block: clamp(40px, 5vw, 80px) clamp(56px, 7vw, 100px); background: #EFEDE8; color: #0B1114;
+}
+.page-mesa main > section.cta-band { border-top: 0; }
+
+/* Paginação da mesa: setas e contador, em cima do botão de contato. */
+.mesa__pager { display: flex; justify-content: flex-end; align-items: center; gap: 12px; margin-bottom: 18px; }
+.mesa__pager[hidden] { display: none; }
+.mesa__pager p { margin: 0; min-width: 58px; text-align: center; font: 12px/1 "JetBrains Mono", ui-monospace, Consolas, monospace; letter-spacing: .06em; color: var(--mute); }
+.mesa__pager p b { font-weight: 400; color: var(--osso); }
+.mesa__pager button { appearance: none; cursor: pointer; width: 42px; height: 42px; padding: 0; border: 1px solid rgba(242, 235, 225, .28); border-radius: 50%; background: rgba(8, 16, 19, .55); color: var(--osso); font: 600 15px/1 var(--text); transition: background .25s, border-color .25s, color .25s, transform .2s; }
+.mesa__pager button:hover, .mesa__pager button.is-pressed { background: var(--osso); border-color: var(--osso); color: var(--deep); }
+.mesa__pager button.is-pressed { transform: scale(.92); }
+.mesa__pager button:focus-visible { outline: 2px solid var(--osso); outline-offset: 3px; }
 main > section.mesa { padding: 0; }
 .mesa__hint-m { display: none; }
 
@@ -504,13 +534,13 @@ main > section.mesa { padding: 0; }
   .mesa__deck::-webkit-scrollbar { display: none; }
   .win { position: relative; left: auto; top: auto; flex: 0 0 80vw; width: 80vw; transform: rotate(calc(var(--r) * .35)); scroll-snap-align: center; cursor: pointer; touch-action: auto; box-shadow: 0 18px 36px rgba(0, 0, 0, .45), 0 0 0 1px rgba(242, 235, 225, .08); }
   .win__body { height: calc(80vw / 1.6); }
-  .win:nth-child(4) { order: -2; } .win:nth-child(3) { order: -1; }
   .win__empty { font-size: 30px; }
   .cur { display: none; }
   .mesa__title { position: static; padding: 0 var(--gutter); font-size: clamp(56px, 17vw, 84px); }
   .mesa__title em { font-size: .86em; }
   .mesa__cta { position: static; padding: 0 var(--gutter); text-align: left; }
   .mesa__hint { display: none; }
+  .mesa__pager { display: none; }
   .mesa__hint-m { display: inline; }
 }
 
@@ -522,6 +552,11 @@ main > section.mesa { padding: 0; }
   .js .cur, .js .mesa__title, .js .mesa__cta { animation: fadeup .9s var(--ease) both; animation-delay: calc(var(--d0) + .6s); }
   .js .cur { animation-name: fadein; animation-delay: calc(var(--d0) + 1s); opacity: 0; }
 }
+/* Troca de projetos: as janelas da vez saem pra baixo antes das próximas caírem. */
+@media (prefers-reduced-motion: no-preference) and (min-width: 761px) {
+  .js .win.is-leaving { pointer-events: none; animation: win-out .34s cubic-bezier(.5, 0, .9, .4) both; animation-delay: calc(var(--o, 0) * 40ms); }
+}
+@keyframes win-out { to { opacity: 0; translate: 0 70px; rotate: -3deg; } }
 @keyframes win-drop { from { opacity: 0; translate: 0 -80px; rotate: 5deg; } to { opacity: 1; translate: 0 0; rotate: 0deg; } }
 
 /* ---------------- Preview de projeto ----------------

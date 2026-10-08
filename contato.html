@@ -3,14 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Contato · Vedoo</title>
-  <meta name="description" content="Fale com Gustavo Azevedo sobre o seu site: WhatsApp, e-mail ou Instagram.">
+  <title>Contato · Fale direto com Gustavo Azevedo | Vedoo</title>
+  <meta name="description" content="Quer um site novo ou reformar o seu? Fale direto com Gustavo Azevedo pelo WhatsApp, e-mail ou Instagram. Resposta pessoal, sem robô.">
+  <link rel="canonical" href="https://vedoo.com.br/contato">
   <meta name="theme-color" content="#081013">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Contato · Vedoo">
-  <meta property="og:description" content="Fale com Gustavo Azevedo sobre o seu site: WhatsApp, e-mail ou Instagram.">
-  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:site_name" content="Vedoo">
+  <meta property="og:url" content="https://vedoo.com.br/contato">
+  <meta property="og:title" content="Contato · Fale direto com Gustavo Azevedo | Vedoo">
+  <meta property="og:description" content="Quer um site novo ou reformar o seu? Fale direto com Gustavo Azevedo pelo WhatsApp, e-mail ou Instagram. Resposta pessoal, sem robô.">
+  <meta property="og:image" content="https://vedoo.com.br/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Vedoo: Dev &amp; Web Design, por Gustavo Azevedo">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/marca/vedoo-avatar.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/marca/vedoo-avatar.png">
   <link rel="preload" href="assets/fonts/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -18,6 +25,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="assets/destaque-unbounded.css">
   <link rel="stylesheet" href="assets/escala-desktop.css">
+  <link rel="stylesheet" href="assets/contato-tema.css"><!-- tema da página: fundo preto e quadro de conversa no estilo novo -->
   <script>document.documentElement.classList.add('js');</script>
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
@@ -32,7 +40,8 @@
   <header class="header">
     <a class="header__logo" href="index.html" aria-label="Vedoo, de Gustavo Azevedo. Início"><img src="assets/marca/vedoo-logo-claro.svg" alt="Vedoo" width="132" height="35"><span class="header__by" aria-hidden="true">por Gustavo Azevedo</span></a>
     <nav class="header__nav" aria-label="Páginas">
-      <a href="sobre.html">Sobre</a>
+      <a href="index.html">Início</a>
+      <a href="gustavo.html">Sobre</a>
       <a href="projetos.html">Projetos</a>
       <a href="contato.html" aria-current="page">Contato</a>
     </nav>
@@ -48,18 +57,23 @@
         <h1 id="conversa-title" class="conversa__title">Fala<em>comigo.</em></h1>
         <p class="conversa__text">Sem formulário chato. É uma conversa rápida, e no final ela vai direto pro meu WhatsApp, já escrita.</p>
         <div class="conversa__progress" aria-hidden="true"><span id="conversa-step">1 de 5</span><i class="is-on"></i><i></i><i></i><i></i><i></i></div>
-        <ul class="conversa__direct" aria-label="Contato direto">
-          <li><span>WhatsApp</span><a href="https://wa.me/5521974127756" target="_blank" rel="noopener">(21) 97412-7756</a></li>
-          <!-- E-mail de contato (trocar por contato@vedoo.studio quando o domínio estiver ativo) -->
-          <li><span>E-mail</span><a href="mailto:developing.gu@gmail.com">developing.gu@gmail.com</a></li>
-          <li><span>Instagram</span><a href="https://instagram.com/gustavovedoo" target="_blank" rel="noopener">@gustavovedoo</a></li>
-        </ul>
+        <!-- Pra quem não quer responder às perguntas: os contatos diretos, com um aviso em cima. -->
+        <div class="conversa__alt">
+          <p class="conversa__alt-k">Prefere falar direto?</p>
+          <p class="conversa__alt-t">Não precisa responder nada: é só tocar em um dos contatos.</p>
+          <ul class="conversa__direct" aria-label="Contato direto">
+            <li><span>WhatsApp</span><a href="https://wa.me/5521974127756" target="_blank" rel="noopener">(21) 97412-7756</a></li>
+            <!-- E-mail de contato (trocar por contato@vedoo.com.br quando o domínio estiver ativo) -->
+            <li><span>E-mail</span><a href="mailto:developing.gu@gmail.com">developing.gu@gmail.com</a></li>
+            <li><span>Instagram</span><a href="https://instagram.com/gustavovedoo" target="_blank" rel="noopener">@gustavovedoo</a></li>
+          </ul>
+        </div>
       </div>
 
       <div class="chat" id="chat">
         <div class="chat__head">
-          <img src="assets/marca/vedoo-avatar.svg" alt="" width="44" height="44">
-          <div><b>Gustavo · Vedoo</b><small><i aria-hidden="true"></i>Conversa direta comigo</small></div>
+          <span class="chat__ava"><img src="assets/gustavo/avatar.webp" alt="" width="240" height="240"></span>
+          <div><b>Gustavo Azevedo</b><small><i aria-hidden="true"></i>responde pessoalmente</small></div>
         </div>
         <div class="chat__msgs" id="chat-msgs" data-lenis-prevent role="log" aria-live="polite" aria-label="Conversa">
           <noscript><p class="chat__b">Oi! Pra falar comigo, chama no WhatsApp: <a href="https://wa.me/5521974127756">(21) 97412-7756</a>.</p></noscript>
@@ -76,10 +90,10 @@
   <footer class="footer">
     <div class="footer__top">
       <img src="assets/marca/vedoo-logo-claro.svg" alt="Vedoo" width="180" height="47">
-      <p class="footer__tag">Sites que fazem <em>parar pra olhar.</em></p>
+      <p class="footer__tag">Seu negócio merece <em>ser lembrado.</em></p>
     </div>
     <div class="footer__bottom">
-      <nav aria-label="Rodapé"><a href="index.html">Início</a><a href="portfolio.html">Portfólio</a><a href="sobre.html">Sobre</a><a href="projetos.html">Projetos</a><a href="contato.html">Contato</a><a href="https://instagram.com/gustavovedoo" target="_blank" rel="noopener">Instagram</a></nav>
+      <nav aria-label="Rodapé"><a href="index.html">Início</a><a href="gustavo.html">Sobre</a><a href="projetos.html">Projetos</a><a href="contato.html">Contato</a><a href="https://instagram.com/gustavovedoo" target="_blank" rel="noopener">Instagram</a></nav>
       <p>© <span id="year">2026</span> Vedoo · Gustavo Azevedo</p>
     </div>
   </footer>
@@ -92,12 +106,11 @@
     <h2 id="menu-title" class="visually-hidden">Navegação</h2>
     <nav class="menu__links" aria-label="Navegação principal">
       <a href="index.html">Início</a>
-      <a href="portfolio.html">Portfólio</a>
-      <a href="sobre.html">Sobre</a>
+      <a href="gustavo.html">Sobre</a>
       <a href="projetos.html">Projetos</a>
       <a href="contato.html">Contato</a>
     </nav>
-    <p class="menu__foot">Sites que fazem <em>parar pra olhar.</em></p>
+    <p class="menu__foot">Seu negócio merece <em>ser lembrado.</em></p>
   </dialog>
 <script>window.VEDOO_CONTACT = { whatsapp: "5521974127756", email: "developing.gu@gmail.com" };</script>
   <script src="assets/js/conversa.js" defer></script>
