@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR" class="no-intro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Página não encontrada · Vedoo</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B1114">
+  <link rel="icon" href="/assets/marca/vedoo-avatar.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/marca/vedoo-avatar.png">
+  <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/assets/destaque-unbounded.css">
+  <link rel="stylesheet" href="/assets/escala-desktop.css">
+  <link rel="stylesheet" href="/assets/404.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="/assets/vendor/gsap.min.js" defer></script>
+  <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="/assets/vendor/lenis.min.js" defer></script>
+  <script src="/app.js" defer></script>
+  <script src="/assets/js/motion.js" defer></script>
+</head>
+<body class="page-inner page-404">
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="header">
+    <a class="header__logo" href="/" aria-label="Vedoo, de Gustavo Azevedo. Início"><img src="/assets/marca/vedoo-logo-claro.svg" alt="Vedoo" width="132" height="35"><span class="header__by" aria-hidden="true">por Gustavo Azevedo</span></a>
+    <nav class="header__nav" aria-label="Páginas">
+      <a href="/">Início</a>
+      <a href="/gustavo">Sobre</a>
+      <a href="/projetos">Projetos</a>
+      <a href="/contato">Contato</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+      <span class="menu-toggle__lines" aria-hidden="true"></span><span>Menu</span>
+    </button>
+  </header>
+
+  <main id="conteudo">
+    <!-- Página de erro: um quadro de conversa sobre um 404 gigante em contorno. Cada resposta tem uma réplica e um destino (assets/js/404.js).
+         Os caminhos desta página começam com "/" porque ela pode abrir em qualquer endereço. Ela não tem rodapé, de propósito. -->
+    <section class="e404" aria-labelledby="e404-title">
+      <h1 id="e404-title" class="visually-hidden">Erro 404: página não encontrada</h1>
+      <p class="e404__ghost" aria-hidden="true">404</p>
+      <div class="e404__chat" data-chat>
+        <div class="e404__chat-top"><span><img src="/assets/gustavo/avatar.webp" alt="" width="240" height="240"></span><p><b>Gustavo Azevedo</b><small><span data-path>/essa-pagina</span> não existe</small></p></div>
+        <div class="e404__chat-body" data-chat-body aria-live="polite">
+          <p class="e404__msg">Ué. Essa página não existe.</p>
+          <p class="e404__msg">Como você veio parar aqui?</p>
+        </div>
+        <div class="e404__chat-opts" data-chat-opts>
+          <button type="button" data-a="perdi">Me perdi</button>
+          <button type="button" data-a="fucando">Tava fuçando</button>
+          <button type="button" data-a="teste">Queria ver se você fez a página de erro</button>
+        </div>
+        <noscript><p class="e404__noscript"><a href="/">Voltar para o início</a></p></noscript>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="menu" class="menu" aria-labelledby="menu-title">
+    <div class="menu__head">
+      <img src="/assets/marca/vedoo-logo-claro.svg" alt="" width="120" height="32">
+      <button class="menu__close" type="button" aria-label="Fechar menu">Fechar <span aria-hidden="true">×</span></button>
+    </div>
+    <h2 id="menu-title" class="visually-hidden">Navegação</h2>
+    <nav class="menu__links" aria-label="Navegação principal">
+      <a href="/">Início</a>
+      <a href="/gustavo">Sobre</a>
+      <a href="/projetos">Projetos</a>
+      <a href="/contato">Contato</a>
+    </nav>
+    <p class="menu__foot">Seu negócio merece <em>ser lembrado.</em></p>
+  </dialog>
+  <script src="/assets/js/404.js" defer></script>
+</body>
+</html>
