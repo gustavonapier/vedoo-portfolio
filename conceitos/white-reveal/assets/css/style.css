@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --ink: #07182d;
+  --blue: #087ad8;
+  --paper: #f7f8f6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #f7f8f6;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 7;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(4, 28, 53, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(4, 28, 53, 0.06) 1px, transparent 1px);
+  background-size: 84px 84px;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+}
+
+.hero__background,
+.hero__person {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__background {
+  background-position: center;
+  background-size: cover;
+}
+
+.hero__background--base {
+  z-index: 0;
+  background-image: url("../images/fundo1.png");
+}
+
+.hero__background--reveal {
+  z-index: 1;
+  background-image: url("../images/fundo2.png");
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.hero__blue-reveal {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  background: url("../images/fundo1.png") center / cover no-repeat;
+  -webkit-mask-image:
+    url("../images/homemsemfundo.png"),
+    radial-gradient(
+      ellipse 190px 145px at var(--mouse-x) var(--mouse-y),
+      #000 0%, #000 62%, rgba(0, 0, 0, 0.85) 78%,
+      rgba(0, 0, 0, 0.25) 92%, transparent 100%
+    );
+  -webkit-mask-size: cover, auto;
+  -webkit-mask-position: center, center;
+  -webkit-mask-repeat: no-repeat, no-repeat;
+  -webkit-mask-composite: source-in;
+  mask-image:
+    url("../images/homemsemfundo.png"),
+    radial-gradient(
+      ellipse 190px 145px at var(--mouse-x) var(--mouse-y),
+      #000 0%, #000 62%, rgba(0, 0, 0, 0.85) 78%,
+      rgba(0, 0, 0, 0.25) 92%, transparent 100%
+    );
+  mask-size: cover, auto;
+  mask-position: center, center;
+  mask-repeat: no-repeat, no-repeat;
+  mask-composite: intersect;
+  transition: opacity 220ms ease;
+}
+
+.hero.is-active .hero__blue-reveal {
+  opacity: 1;
+}
+
+.hero.is-active .hero__background--reveal {
+  opacity: 1;
+}
+
+.hero__copy {
+  position: absolute;
+  z-index: 2;
+  top: clamp(46px, 7vh, 88px);
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.hero__eyebrow {
+  margin-bottom: clamp(14px, 1.8vw, 25px);
+  color: #0a69b2;
+  font-size: clamp(10px, 0.8vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  color: #07172a;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(54px, 7vw, 122px);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.085em;
+  line-height: 0.76;
+  white-space: normal;
+  text-shadow: 0 2px 28px rgba(255, 255, 255, 0.45);
+}
+
+.hero h1 span {
+  display: block;
+}
+
+.hero__copy--reveal {
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(
+    ellipse 190px 145px at var(--mouse-x) var(--mouse-y),
+    #000 0%, #000 62%, rgba(0, 0, 0, 0.85) 78%,
+    rgba(0, 0, 0, 0.25) 92%, transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 190px 145px at var(--mouse-x) var(--mouse-y),
+    #000 0%, #000 62%, rgba(0, 0, 0, 0.85) 78%,
+    rgba(0, 0, 0, 0.25) 92%, transparent 100%
+  );
+  transition: opacity 220ms ease;
+}
+
+.hero.is-active .hero__copy--reveal {
+  opacity: 1;
+}
+
+.hero__person {
+  z-index: 4;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 220ms ease;
+}
+
+.hero.is-active .hero__person {
+  opacity: 1;
+  /* The pointer gently dissolves the cutout, revealing both backgrounds below. */
+  -webkit-mask-image: radial-gradient(
+    ellipse 190px 145px at var(--mouse-x) var(--mouse-y),
+    transparent 0%, transparent 62%, rgba(0, 0, 0, 0.15) 78%,
+    rgba(0, 0, 0, 0.75) 92%, #000 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 190px 145px at var(--mouse-x) var(--mouse-y),
+    transparent 0%, transparent 62%, rgba(0, 0, 0, 0.15) 78%,
+    rgba(0, 0, 0, 0.75) 92%, #000 100%
+  );
+}
+
+.hero__background--reveal {
+  /* Feathered falloff adapted from Hero Pronta 05, without a hard edge. */
+  --reveal-mask: radial-gradient(ellipse 310px 245px at var(--mouse-x) var(--mouse-y),
+    #000 0%, #000 58%, rgba(0, 0, 0, 0.9) 72%,
+    rgba(0, 0, 0, 0.35) 88%, transparent 100%);
+  -webkit-mask-image: var(--reveal-mask);
+  mask-image: var(--reveal-mask);
+  pointer-events: none;
+}
+
+.hero__footer {
+  position: absolute;
+  z-index: 6;
+  right: clamp(24px, 5vw, 84px);
+  bottom: clamp(26px, 5vh, 62px);
+  left: clamp(24px, 5vw, 84px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.hero__footer p {
+  width: min(280px, 38vw);
+  font-size: clamp(12px, 1vw, 15px);
+  line-height: 1.55;
+}
+
+.hero__footer strong {
+  display: block;
+  font-weight: 600;
+}
+
+.hero__cta {
+  display: flex;
+  min-width: 255px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  border-bottom: 1px solid rgba(7, 24, 45, 0.6);
+  padding: 12px 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.hero__cta:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.hero__cta-icon {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 16px;
+  transition: transform 250ms ease;
+}
+
+.hero__cta:hover .hero__cta-icon {
+  transform: rotate(-45deg);
+}
+
+.hero__hint {
+  position: absolute;
+  z-index: 6;
+  bottom: clamp(30px, 5vh, 65px);
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  transform: translateX(-50%);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero__hint span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 5px rgba(8, 122, 216, 0.12);
+  animation: pulse 1.8s ease-out infinite;
+}
+
+@keyframes arrive {
+  from { opacity: 0; transform: scale(1.04); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  50% { box-shadow: 0 0 0 9px rgba(8, 122, 216, 0); }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero__background,
+  .hero__person {
+    object-position: 50% center;
+  }
+
+  .hero__background {
+    background-position: 50% center;
+  }
+
+  .hero__copy {
+    top: 6vh;
+    width: 100%;
+    padding: 0 18px;
+  }
+
+  .hero__eyebrow {
+    margin-top: 22px;
+    padding: 0 24px;
+    font-size: 9px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(34px, 9.2vw, 56px);
+    line-height: 0.86;
+    letter-spacing: -0.07em;
+    overflow-wrap: break-word;
+  }
+
+  .hero h1 span:last-child {
+    max-width: 330px;
+    margin-inline: auto;
+  }
+
+  .hero__footer {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hero__footer p {
+    width: 240px;
+  }
+
+  .hero__cta {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero__hint {
+    display: none;
+  }
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .hero__background--reveal,
+  .hero__person,
+  .hero__cta-icon {
+    transition-duration: 0.01ms;
+  }
+
+  .hero__hint {
+    display: none;
+  }
+}

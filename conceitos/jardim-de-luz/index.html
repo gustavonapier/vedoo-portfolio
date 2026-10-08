@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#031d17">
+  <meta name="description" content="Uma coleção visual em movimento. Explore a galeria Jardim de Luz.">
+  <title>Jardim de Luz — Coleção visual</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/carousel.js" defer></script>
+</head>
+<body>
+  <main>
+    <section class="gallery" aria-label="Jardim de Luz: carrossel de imagens" aria-roledescription="carrossel">
+      <div class="stars" aria-hidden="true"></div>
+      <div class="frame" aria-hidden="true"></div>
+      <header class="heading">
+        <p class="eyebrow">ATELIÊ DIGITAL <span>·</span> <strong>COLEÇÃO Nº 01</strong></p>
+        <h1>Jardim de Luz</h1>
+        <p class="subtitle">Formas vivas, suspensas em um fluxo de luz.</p>
+      </header>
+
+      <div class="stage" tabindex="0" aria-label="Explore as imagens usando as setas do teclado ou arrastando">
+        <div class="orbit" id="orbit"></div>
+      </div>
+
+      <footer class="collection-info">
+        <p class="counter"><span id="current-number">04</span><span class="divider">/</span><span>08</span></p>
+        <div class="selection">
+          <button class="arrow previous" type="button" aria-label="Imagem anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+          <h2 id="current-title">Tempestade de Jade</h2>
+          <button class="arrow next" type="button" aria-label="Próxima imagem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
+        </div>
+        <div class="pagination" aria-label="Escolha uma imagem"></div>
+        <p class="hint">ARRASTE PARA EXPLORAR <span>·</span> <button class="playback" type="button" aria-label="Pausar movimento automático">PAUSAR <span aria-hidden="true">Ⅱ</span></button></p>
+        <span class="sr-only" id="announcement" aria-live="polite"></span>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>

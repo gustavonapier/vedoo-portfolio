@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estrategista de Marcas & Identidade Visual | Design com Propósito</title>
+  <meta name="description" content="Criação de marcas memoráveis, identidades visuais completas e branding estratégico para empresas que buscam autoridade e destaque no mercado.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       HERO WRAPPER
+       ====================================================================== -->
+  <header class="hero-wrapper" id="hero">
+
+    <!-- Background Layer with fundohero.png and gradient overlays -->
+    <div class="hero-bg-layer">
+      <img src="assets/imagens/fundohero.png" alt="Fundo Hero Red Glow" class="hero-bg-img">
+      <div class="hero-bg-overlay"></div>
+      <div class="digital-grid-overlay"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="hero-navbar" aria-label="Navegação Principal">
+      <!-- Center Nav Links -->
+      <ul class="nav-links-menu">
+        <li><a href="#inicio" class="nav-link">INÍCIO</a></li>
+        <li><a href="#servicos" class="nav-link">SERVIÇOS</a></li>
+        <li><a href="#projetos" class="nav-link">PROJETOS</a></li>
+      </ul>
+    </nav>
+
+    <!-- Fullscreen Center Stage: Expert Subject & Pixel Canvas -->
+    <div class="hero-expert-stage">
+      <div class="expert-canvas-container" title="Clique para ver o efeito de pixels">
+        <!-- Ambient lighting aura behind expert -->
+        <div class="expert-ambient-aura"></div>
+
+        <!-- HTML5 Canvas for the pixel emergence animation -->
+        <canvas id="pixelCanvas"></canvas>
+
+        <!-- High-res expert cut-out image revealed seamlessly -->
+        <img id="expertImg" src="assets/imagens/expert.png" alt="Designer e Estrategista de Marcas" class="expert-full-img">
+      </div>
+    </div>
+
+    <!-- Center Stage: Hero Columns (Left & Right) -->
+    <div class="hero-stage">
+
+      <!-- Left Column: Criação de Marcas Únicas -->
+      <aside class="hero-col-left">
+        <div class="source-bold-block">
+          <h2 class="source-bold-title">
+            CRIAÇÃO<br>
+            DE MARCAS<br>
+            ÚNICAS/
+          </h2>
+          <p class="source-bold-desc">
+            Onde negócios ganham identidade<br>
+            e conquistam autoridade real
+          </p>
+        </div>
+      </aside>
+
+      <!-- Right Column: Giant Display Typography & Subtitle -->
+      <section class="hero-col-right">
+        <h1 class="main-branding-title">
+          <span>BRANDING &</span>
+          <span>IDENTIDADE</span>
+          <span>VISUAL</span>
+        </h1>
+
+        <div class="branding-action-box">
+          <p class="branding-action-text">
+            Desenvolvo <strong>identidades visuais completas</strong> que se destacam.<br>
+            Do conceito à estratégia visual — ajudo marcas<br>
+            a se <strong>posicionarem</strong> com valor e autoridade
+          </p>
+
+          <a href="#servicos" class="circle-arrow-btn" aria-label="Conhecer Serviços">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Bottom Dock: Floating Cards (Left) & Category Pills (Right) -->
+    <footer class="hero-bottom-dock">
+
+      <!-- Bottom Left: Two Dynamic Cards -->
+      <div class="bottom-cards-wrapper">
+
+        <!-- Card 1: 85% Solid White Card -->
+        <article class="stat-card-white">
+          <div class="stat-card-header">
+            <div class="pixel-cross-icon" aria-hidden="true">
+              <span></span><span></span>
+              <span></span><span></span>
+            </div>
+            <span class="stat-card-tag">Marcas que<br>lideram o setor</span>
+          </div>
+
+          <div class="stat-card-body">
+            <div class="stat-card-number">85%</div>
+            <div class="stat-card-caption">Mais percepção de valor</div>
+          </div>
+        </article>
+
+        <!-- Card 2: Glassmorphism Reload Brand Card -->
+        <article class="glass-card-reload">
+          <div class="glass-card-header">
+            <h3 class="glass-card-title">Transforme<br>sua marca</h3>
+            <!-- Geometric 8-pointed star / sunburst icon -->
+            <svg class="spin-star-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 0L14.4 7.2L21.6 4.8L16.8 12L24 14.4L16.8 16.8L21.6 24L14.4 21.6L12 28.8L9.6 21.6L2.4 24L7.2 16.8L0 14.4L7.2 12L2.4 4.8L9.6 7.2L12 0Z" />
+            </svg>
+          </div>
+
+          <p class="glass-card-desc">
+            Estratégia visual e design exclusivo para empresas que desejam crescer com autoridade
+          </p>
+        </article>
+
+      </div>
+
+      <!-- Bottom Right: Selo Estratégia Visual -->
+      <div class="bottom-pills-wrapper">
+        <div class="branding-star-pill" aria-label="Selo Estratégia Visual">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="currentColor"/>
+          </svg>
+          <span>ESTRATÉGIA VISUAL</span>
+        </div>
+      </div>
+
+    </footer>
+
+  </header>
+
+  <!-- Pre-computed pixel coordinate grid data (100% CORS-proof & instant) -->
+  <script src="assets/js/expert-pixels.js"></script>
+
+  <!-- Main Animation Engine & Logic -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
