@@ -151,6 +151,19 @@ npm start
 
 Depois é só acessar **http://127.0.0.1:4173**. O servidor local também aceita URLs limpas (`/projetos`, `/gustavo`, `/contato`) e mostra a página 404.
 
+## Publicar
+
+O site vai pro ar no **Cloudflare Workers**, só com arquivos estáticos (configuração em [`wrangler.jsonc`](wrangler.jsonc) e cabeçalhos em [`_headers`](_headers)).
+
+```sh
+npm install
+npm run build     # monta a pasta dist/ só com o que vai pro ar
+npm run preview   # testa localmente igual a como fica no ar
+npm run deploy    # publica
+```
+
+Página ou pasta nova no site precisa entrar na lista do [`ferramentas/montar-site.mjs`](ferramentas/montar-site.mjs), senão fica fora da `dist/`.
+
 ## Estrutura
 
 ```
@@ -171,7 +184,8 @@ Depois é só acessar **http://127.0.0.1:4173**. O servidor local também aceita
 │   ├── fonts/          Fontes locais
 │   └── vendor/         GSAP, ScrollTrigger e Lenis
 ├── burger/  vet/  conceitos/   Projetos publicados junto com o site
-├── ferramentas/        Script que gera o escala-desktop.css
+├── ferramentas/        Scripts: montar a dist/ e gerar o escala-desktop.css
+├── wrangler.jsonc      Publicação no Cloudflare Workers
 ├── docs/               Prints do README e notas de manutenção
 └── server.cjs          Servidor local (só desenvolvimento)
 ```

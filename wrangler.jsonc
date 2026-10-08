@@ -1,0 +1,21 @@
+// Publicação do site da Vedoo no Cloudflare Workers (só arquivos estáticos, sem código de servidor).
+// Publicar: npm run deploy   (ou automático, pelo GitHub ligado no painel da Cloudflare)
+// Testar igual ao ar: npm run preview
+{
+  "name": "vedoo",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    // só a pasta dist/ vai pro ar; quem monta ela é o "npm run build" (ferramentas/montar-site.mjs)
+    "directory": "./dist",
+    // /gustavo abre o gustavo.html (e /gustavo.html redireciona pra /gustavo)
+    "html_handling": "auto-trailing-slash",
+    // endereço que não existe mostra a 404.html
+    "not_found_handling": "404-page"
+  }
+  // Quando o domínio estiver comprado e na Cloudflare, tire as duas barras das linhas abaixo
+  // (e ponha uma vírgula depois da chave que fecha "assets", na linha de cima):
+  // "routes": [
+  //   { "pattern": "vedoo.com.br", "custom_domain": true },
+  //   { "pattern": "www.vedoo.com.br", "custom_domain": true }
+  // ]
+}

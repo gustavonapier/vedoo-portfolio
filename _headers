@@ -1,0 +1,23 @@
+# Cabeçalhos do site no Cloudflare (este arquivo não é publicado como página).
+
+# Enquanto o site estiver só no endereço provisório da Cloudflare, o Google não indexa:
+# assim ele só aparece na busca com o domínio de verdade.
+https://:worker.:conta.workers.dev/*
+  X-Robots-Tag: noindex
+
+# Imagens, fontes e bibliotecas mudam pouco: o navegador pode guardar por um dia.
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/vendor/*
+  Cache-Control: public, max-age=604800
+/assets/gustavo/*
+  Cache-Control: public, max-age=86400
+/assets/projetos/*
+  Cache-Control: public, max-age=86400
+/assets/mesa/*
+  Cache-Control: public, max-age=86400
+
+# Um pouco de proteção em todas as páginas
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

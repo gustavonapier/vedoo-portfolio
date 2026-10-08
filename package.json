@@ -4,9 +4,13 @@
   "private": true,
   "description": "Portfólio Vedoo — Gustavo Azevedo",
   "scripts": {
-    "start": "node server.cjs"
+    "start": "node server.cjs",
+    "build": "node ferramentas/montar-site.mjs",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "devDependencies": {
-    "playwright": "^1.63.0"
+    "playwright": "^1.63.0",
+    "wrangler": "^4.148.0"
   }
 }

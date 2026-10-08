@@ -5,3 +5,5 @@ Claude outputs/
 server.pid
 .DS_Store
 Thumbs.db
+dist/
+.wrangler/
