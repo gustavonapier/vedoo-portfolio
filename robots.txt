@@ -1,0 +1,8 @@
+# Vedoo: o Google pode ler o site todo, menos as páginas de demonstração dos projetos
+# (elas são exemplos com nomes fictícios e não devem aparecer na busca como se fossem negócios reais).
+User-agent: *
+Disallow: /conceitos/
+Disallow: /burger/
+Disallow: /vet/
+
+Sitemap: https://vedoo.com.br/sitemap.xml
