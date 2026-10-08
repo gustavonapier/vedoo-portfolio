@@ -1,91 +1,189 @@
-# Vedoo — portfólio de Gustavo Azevedo
+<div align="center">
 
-Site de cinco páginas, feito só com **HTML, CSS e JavaScript**. Não tem framework, build nem dependência em produção: dá pra abrir o `index.html` direto ou publicar a pasta em qualquer hospedagem estática (Netlify, Vercel, GitHub Pages).
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/marca/vedoo-logo-claro.svg">
+  <img src="assets/marca/vedoo-logo-escuro.svg" alt="Vedoo" width="220">
+</picture>
 
-## Rodar localmente
+### Portfólio de Gustavo Azevedo, designer e desenvolvedor de sites
 
-`npm start` e acesse http://127.0.0.1:4173. O `server.cjs` e o Playwright existem só para desenvolvimento.
+Sites, landing pages e lojas virtuais desenhados e programados do zero, com atendimento direto no Rio de Janeiro, em Niterói, em Maricá e online.
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=black)
+![Sem build](https://img.shields.io/badge/build-nenhum-0d1117?style=flat-square)
+
+<br>
+
+<img src="docs/prints/inicio-desktop.jpg" alt="Página inicial da Vedoo: personagem 3D do Gustavo entre as palavras Dev e Web, com Design em contorno" width="100%">
+
+</div>
+
+---
+
+## Sobre o projeto
+
+O site da **Vedoo** é o portfólio e a vitrine comercial do Gustavo. Foi feito só com **HTML, CSS e JavaScript**, sem framework, sem etapa de build e sem dependência em produção. Dá pra abrir o `index.html` direto no navegador ou publicar a pasta em qualquer hospedagem estática (Netlify, Vercel, Cloudflare Pages ou GitHub Pages).
+
+Os projetos mostrados no portfólio são publicados junto com o site, cada um na sua pasta. Por isso eles abrem de verdade dentro de uma janela de preview, em vez de aparecerem só como imagem.
 
 ## Páginas
 
-| Página | Arquivo | Conteúdo |
+### Início
+
+Capa "Dev & Web Design" com um personagem 3D que pisca, se surpreende no clique e acompanha o cursor. A palavra *Design* é digitada letra por letra e um cursor "Gustavo" redimensiona a caixa de texto, como num editor de design. Depois vêm os trabalhos em destaque, os serviços (escritos como um arquivo de código), uma faixa de tecnologias que dá pra arrastar e um quadro de conversa que leva ao contato.
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/prints/inicio-destaques.jpg" alt="Trabalhos em destaque: Brasas e Fogão, Quanta Corp e Revelar Estético"></td>
+    <td width="50%"><img src="docs/prints/inicio-servicos.jpg" alt="Serviços no estilo prancheta, como um arquivo servicos.tsx"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Trabalhos em destaque</sub></td>
+    <td align="center"><sub>Serviços</sub></td>
+  </tr>
+</table>
+
+### Projetos: a mesa
+
+Os projetos ficam espalhados numa "mesa" como janelas de navegador. Dá pra arrastar as janelas, e as setas trocam o grupo de quatro. O cursor "Gustavo" passeia pela mesa e avança os projetos sozinho até a pessoa interagir. Um clique abre o site de verdade numa janela de preview, com versão para computador e celular.
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/prints/projetos-desktop.jpg" alt="A mesa de projetos com janelas de navegador arrastáveis"></td>
+    <td width="50%"><img src="docs/prints/projetos-preview.jpg" alt="Preview do projeto Curso de IA aberto dentro de uma janela da Vedoo"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>A mesa</sub></td>
+    <td align="center"><sub>Preview de um projeto, rodando de verdade</sub></td>
+  </tr>
+</table>
+
+### Sobre
+
+Abertura "Oi, eu sou o Gustavo.", seguida de "Metade designer, metade dev.": o layout desenhado e o site pronto ficam lado a lado, separados por uma barra que dá pra arrastar. Depois vem um varal de polaroids com a rotina fora da tela e o currículo, com crachá pendurado, folha resumida e o PDF completo para baixar.
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/prints/sobre-desktop.jpg" alt="Abertura da página Sobre"></td>
+    <td width="50%"><img src="docs/prints/sobre-metades.jpg" alt="Comparação entre o rascunho e o site pronto do Burger"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Abertura</sub></td>
+    <td align="center"><sub>Duas metades: rascunho × site pronto</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/prints/sobre-fotos.jpg" alt="Varal de polaroids com fotos da rotina"></td>
+    <td width="50%"><img src="docs/prints/sobre-curriculo.jpg" alt="Currículo com crachá e folha resumida"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Fora da tela</sub></td>
+    <td align="center"><sub>Currículo</sub></td>
+  </tr>
+</table>
+
+### Contato
+
+Em vez de formulário, uma conversa em formato de chat, uma pergunta por vez. No fim, a mensagem já sai escrita para o WhatsApp. WhatsApp, e-mail e Instagram também ficam disponíveis direto.
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/prints/contato-desktop.jpg" alt="Página de contato com conversa em formato de chat"></td>
+    <td width="50%"><img src="docs/prints/404-desktop.jpg" alt="Página 404 com um quadro de conversa sobre o número 404 em contorno"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Contato</sub></td>
+    <td align="center"><sub>Página 404, que também conversa</sub></td>
+  </tr>
+</table>
+
+### No celular
+
+Todas as páginas foram pensadas também para o celular. A capa empilha, a mesa vira um carrossel e o menu abre em tela cheia.
+
+<p align="center">
+  <img src="docs/prints/inicio-mobile.jpg" alt="Início no celular" width="24%">
+  <img src="docs/prints/projetos-mobile.jpg" alt="Projetos no celular" width="24%">
+  <img src="docs/prints/sobre-mobile.jpg" alt="Sobre no celular" width="24%">
+  <img src="docs/prints/contato-mobile.jpg" alt="Contato no celular" width="24%">
+</p>
+
+## Projetos no portfólio
+
+A lista fica em [`projects.js`](projects.js). Os projetos com pasta própria são publicados junto com o site.
+
+| Projeto | Tipo | Onde está |
 |---|---|---|
-| Início | `index.html` | a "mesa": projetos reais em janelas de navegador que dá pra arrastar, cursores "Gustavo" e "Você", processo e chamada pro contato |
-| Portfólio | `portfolio.html` | o hero GUSTAVO com a abertura, o manifesto IMPACTO e a chamada pro contato |
-| Sobre | `sobre.html` | sua apresentação, a história do nome, serviços e como você trabalha |
-| Projetos | `projetos.html` | grade de cards montada a partir do `projects.js` |
-| Contato | `contato.html` | conversa em formato de chat (uma pergunta por vez) que termina com a mensagem pronta pro WhatsApp; WhatsApp, e-mail e Instagram diretos |
+| Brasas e Fogão | Site institucional · restaurante | [brasasefogao.com.br](https://brasasefogao.com.br/) (site do cliente) |
+| Quanta Corp | Landing page · simulador de receita | em breve |
+| Burger | Landing page · hamburgueria | `burger/` (React + Vite, versão compilada) |
+| Cauda Leve Vet | Site institucional · veterinária | `vet/` |
+| Curso de IA | Hero · curso online | `conceitos/curso-ia/` |
+| Flux | Hero · agência criativa | `conceitos/flux/` |
+| Jardim de Luz | Hero · galeria de arte | `conceitos/jardim-de-luz/` |
+| Revelar Estético | Hero · clínica de estética | `conceitos/estetica-revelacao/` |
+| Branding em Pixels | Hero · identidade visual | `conceitos/branding-pixels/` |
+| Aurea Residences | Hero · imóveis | `conceitos/aurea/` |
+| Dra. Sofia Miranda | Hero · odontologia | `conceitos/dra-sofia/` |
+| White Reveal | Hero · posicionamento de marca | `conceitos/white-reveal/` |
+| Synapse OS | Hero · tecnologia | `conceitos/synapse-os/` |
 
-Os projetos ficam publicados junto com o site, cada um na sua pasta:
+## Tecnologias
 
-- `burger/`: a hamburgueria (versão compilada do projeto React/Vite, com `base: /burger/`).
-- `vet/`: a Cauda Leve Vet (cópia do site estático, com as imagens convertidas pra `.webp`).
+- **HTML, CSS e JavaScript puros**, sem framework nem build.
+- **GSAP + ScrollTrigger** e **Lenis**, servidos localmente em `assets/vendor/`, para as animações ligadas à rolagem. Sem eles, o site continua funcionando só com CSS.
+- **View Transitions** para o fade curto entre páginas, nos navegadores que suportam.
+- **Fontes locais**: Unbounded, Inter, Instrument Serif, Bebas Neue e JetBrains Mono, todas com licença OFL.
+- **Acessibilidade**: respeita o "reduzir movimento" do sistema, e a comparação rascunho × site pronto funciona pelo teclado (é um `input type="range"`).
+- **SEO**: título, descrição, `canonical`, Open Graph, dados estruturados (`ld+json`), `robots.txt` e `sitemap.xml`.
 
-Esses sites aparecem pelo preview (`assets/js/preview.js`): qualquer elemento com `data-preview="pasta/"` abre a janela. Os cards da página Projetos usam o mesmo preview.
+## Rodar localmente
 
-Em hospedagens com "URL limpa" (Netlify, Vercel) o portfólio abre em `/portfolio`.
+Precisa de [Node.js](https://nodejs.org/) só para o servidor de desenvolvimento.
 
-## A mesa (página inicial)
+```sh
+git clone https://github.com/gustavonapier/vedoo-portfolio.git
+cd vedoo-portfolio
+npm start
+```
 
-- É uma prancha de 1440 × 900 que escala inteira pra caber na tela (`assets/js/mesa.js`).
-- Clique numa janela de projeto abre o **preview**: o site roda de verdade (com as animações de entrada dele) dentro de uma janela da Vedoo, com opção Computador/Celular e o botão "Quero um site assim". Links pra fora (WhatsApp, Instagram) ficam bloqueados no preview. A janela do portfólio abre a página normalmente. Arrastar só move a janela. Ao passar o mouse, o print rola devagar e mostra o site inteiro.
-- Posição, tamanho e inclinação de cada janela ficam no `style` dela no `index.html` (`--x`, `--y`, `--w`, `--h`, `--r`).
-- Os prints ficam em `assets/mesa/` (página inteira, 1000 px de largura). Quando um projeto mudar, é só tirar um print novo da página inteira e trocar o arquivo.
-- O cursor "Gustavo" passeia pelas janelas; o "Você" fica perto da janela vazia "seu-negocio.com.br", que leva pro contato.
-- No celular as janelas viram um carrossel que passa com o dedo.
-
-## O que editar
-
-| O quê | Onde |
-|---|---|
-| Projetos | `projects.js` (instruções no topo do arquivo). Com `status: 'no-ar'` e `link`, o card vira link |
-| Prints dos projetos | `assets/projetos/` (paisagem 4:3, ~1200 × 900, de preferência `.webp`) |
-| Sua foto na página Sobre | salve em `assets/gustavo.webp` e siga o comentário `TROCAR` no `sobre.html` |
-| Textos da página Sobre | `sobre.html` (procure `TROCAR`) |
-| WhatsApp e e-mail | `contato.html` (lista de contato direto e `window.VEDOO_CONTACT` no fim do arquivo) |
-| Perguntas da conversa do contato | `assets/js/conversa.js` (lista `STEPS` no topo) |
-| Cores e fontes | topo do `styles.css` (`:root`) |
+Depois é só acessar **http://127.0.0.1:4173**. O servidor local também aceita URLs limpas (`/projetos`, `/gustavo`, `/contato`) e mostra a página 404.
 
 ## Estrutura
 
-- `styles.css`: identidade (paleta Cobre × Petróleo + vermelho), layout de todas as páginas, abertura animada e versão mobile.
-- `app.js`: fim da abertura, cabeçalho ao rolar, menu, grade de projetos, formulário de contato e revelação das seções.
-- `projects.js`: a lista de projetos.
-- `assets/foto-principal.webp`: foto do hero.
-- `assets/impacto.webp`: foto da outra modelo em tons de vermelho (do teste de paleta "cereja"), usada parada dentro das letras de "IMPACTO" (com o contorno vermelho por trás).
-- `assets/marca/`: logo, símbolo e avatar da Vedoo.
-- `assets/fonts/`: Bebas Neue, Inter e Instrument Serif, locais. Licenças OFL.
-
-O cabeçalho e o rodapé se repetem nas quatro páginas: se mudar um link, mude nos quatro arquivos.
-
-## Hero
-
-O hero é uma prancha de 1440 × 900 em SVG (foto + nome **GUSTAVO** no mesmo sistema de coordenadas) que escala inteira, então o texto fica sempre alinhado ao rosto e a cabeça nunca é cortada. Em telas largas e baixas a prancha fica um pouco mais estreita e as laterais recebem a própria foto desfocada. G, U, S e O são sólidos; T, A e V são só contorno vermelho de 1 px. Há duas composições: uma horizontal (desktop) e uma vertical (celular e tablet em pé), trocadas por `max-aspect-ratio: 4/5`.
-
-## Abertura
-
-Cortina com o símbolo da Vedoo se desenhando → cortina sobe → foto assenta → nome sobe → contorno do T, A e V é traçado → textos entram. Cerca de 3 segundos, toda vez que o portfólio carrega (na página inicial, só a cortina, e depois as janelas caem na mesa). Com "reduzir movimento" ativado no sistema, tudo aparece direto, sem animação.
-
-## Movimento ao rolar (GSAP + Lenis)
-
-- `assets/vendor/`: GSAP 3.15 + ScrollTrigger e Lenis 1.3, locais (sem CDN).
-- `assets/js/motion.js`: rolagem suave (Lenis), cabeçalho que some ao descer e volta ao subir, títulos com palavras subindo, hero que sai de cena ao rolar (foto desce, nome sobe, textos somem), linhas do processo se desenhando e logo do rodapé subindo. Os botões não se mexem: só mudam de cor no hover.
-- Se as bibliotecas não carregarem, ou com "reduzir movimento" ativado, o site continua funcionando só com o CSS.
-
-## Observação
-
-Os scripts em `.verification/` eram da versão anterior (hero de uma tela só, sem rolagem) e não valem mais para este layout.
-
-A troca entre páginas usa um fade curto (View Transitions) nos navegadores que suportam.
-
-## Tamanho no desktop (escala de 95%)
-
-`assets/escala-desktop.css` é **gerado** a partir do `styles.css`: ele repete as regras com os px × 0,95, só acima de 761px (a página inicial não usa).
-Sempre que mudar o `styles.css`, gere de novo, senão no desktop vale o valor antigo:
-
-```sh
-pip install tinycss2
-python ferramentas/escala.py
+```
+├── index.html          Início
+├── projetos.html       Projetos (a mesa)
+├── gustavo.html        Sobre (/gustavo)
+├── contato.html        Contato
+├── 404.html            Página de erro
+├── projects.js         Lista de projetos
+├── styles.css          Identidade, layout e versão mobile
+├── app.js              Cabeçalho, menu e revelação das seções
+├── assets/
+│   ├── js/             mesa, preview, conversa, motion, gustavo, 404
+│   ├── gustavo/        Personagem 3D, fotos e currículo em PDF
+│   ├── projetos/       Capas dos projetos
+│   ├── mesa/           Prints de página inteira usados na mesa
+│   ├── marca/          Logo e avatar da Vedoo
+│   ├── fonts/          Fontes locais
+│   └── vendor/         GSAP, ScrollTrigger e Lenis
+├── burger/  vet/  conceitos/   Projetos publicados junto com o site
+├── ferramentas/        Script que gera o escala-desktop.css
+├── docs/               Prints do README e notas de manutenção
+└── server.cjs          Servidor local (só desenvolvimento)
 ```
 
-Pra mudar a escala, troque `FATOR = 0.95` no início do script.
+Os detalhes de cada página, o que editar e onde, e as regras de SEO e escala estão em **[docs/MANUTENCAO.md](docs/MANUTENCAO.md)**.
+
+## Contato
+
+<div align="center">
+
+**Gustavo Azevedo** · Maricá, RJ
+
+[Instagram @gustavovedoo](https://instagram.com/gustavovedoo) · [developing.gu@gmail.com](mailto:developing.gu@gmail.com) · [GitHub](https://github.com/gustavonapier)
+
+</div>
