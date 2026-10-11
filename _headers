@@ -17,7 +17,18 @@ https://:worker.:conta.workers.dev/*
 /assets/mesa/*
   Cache-Control: public, max-age=86400
 
-# Um pouco de proteção em todas as páginas
+# Proteção em todas as páginas (é o que o MDN Observatory confere).
+# A Content-Security-Policy diz de onde o site pode carregar cada coisa:
+#   - scripts: só arquivos do próprio site. Script escrito dentro do HTML (<script>...</script>) ou onclick="" NÃO roda:
+#     ponha o código num arquivo .js. (O <script type="application/ld+json"> do SEO pode ficar, ele não é executado.)
+#   - estilos e fontes: do próprio site e do Google Fonts (usado nas páginas de conceitos/).
+#   - imagens: só do próprio site. Janelas (iframe): só páginas do próprio site, que é o que o preview usa.
+# Se for usar algo de outro endereço (vídeo do YouTube, analytics, fonte de outro lugar), acrescente o endereço na
+# parte certa da linha abaixo. Pra conferir antes de publicar: npm run preview e olhe o Console do navegador.
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests
