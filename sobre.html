@@ -11,23 +11,23 @@
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Gustavo Azevedo · Designer e desenvolvedor de sites | Vedoo</title>
-  <meta name="description" content="Quem faz os sites da Vedoo: Gustavo Azevedo, designer e desenvolvedor no Rio de Janeiro. Sobre, currículo e contato direto.">
-  <link rel="canonical" href="https://vedoo.com.br/gustavo">
+  <title>Sobre · Quem faz os sites da Vedoo</title>
+  <meta name="description" content="Conheça Gustavo Azevedo, o designer e desenvolvedor por trás da Vedoo. Sobre, currículo e contato direto.">
+  <link rel="canonical" href="https://vedoo.com.br/sobre">
   <meta name="theme-color" content="#EFEDE8">
   <meta property="og:type" content="profile">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Vedoo">
-  <meta property="og:url" content="https://vedoo.com.br/gustavo">
-  <meta property="og:title" content="Gustavo Azevedo · Designer e desenvolvedor de sites | Vedoo">
-  <meta property="og:description" content="Quem faz os sites da Vedoo: Gustavo Azevedo, designer e desenvolvedor no Rio de Janeiro. Sobre, currículo e contato direto.">
-  <meta property="og:image" content="https://vedoo.com.br/assets/og-image.jpg">
+  <meta property="og:url" content="https://vedoo.com.br/sobre">
+  <meta property="og:title" content="Sobre · Quem faz os sites da Vedoo">
+  <meta property="og:description" content="Conheça Gustavo Azevedo, o designer e desenvolvedor por trás da Vedoo. Sobre, currículo e contato direto.">
+  <meta property="og:image" content="https://vedoo.com.br/assets/og-image.jpg?v=3">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Vedoo: Dev &amp; Web Design, por Gustavo Azevedo">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="assets/marca/vedoo-avatar.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/marca/vedoo-avatar.png">
+  <link rel="icon" href="assets/marca/icone.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="assets/marca/icone-180.png">
   <link rel="preload" href="assets/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-serif-400-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/gustavo/busto-bracos.webp" as="image" type="image/webp">
@@ -35,7 +35,9 @@
   <link rel="stylesheet" href="assets/destaque-unbounded.css">
   <link rel="stylesheet" href="assets/escala-desktop.css">
   <link rel="stylesheet" href="assets/gustavo.css?v=58">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Gustavo Azevedo", "jobTitle": "Designer e desenvolvedor de sites", "url": "https://vedoo.com.br/gustavo", "image": "https://vedoo.com.br/assets/og-image.jpg", "address": {"@type": "PostalAddress", "addressLocality": "Maricá", "addressRegion": "RJ", "addressCountry": "BR"}, "worksFor": {"@type": "Organization", "name": "Vedoo", "url": "https://vedoo.com.br/"}, "sameAs": ["https://instagram.com/gustavovedoo", "https://github.com/gustavonapier"]}</script>
+  <link rel="stylesheet" href="assets/hero.css">
+  <link rel="stylesheet" href="assets/sobre.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Gustavo Azevedo", "jobTitle": "Designer e desenvolvedor de sites", "url": "https://vedoo.com.br/sobre", "image": "https://vedoo.com.br/assets/og-image.jpg?v=3", "address": {"@type": "PostalAddress", "addressLocality": "Maricá", "addressRegion": "RJ", "addressCountry": "BR"}, "worksFor": {"@type": "Organization", "name": "Vedoo", "url": "https://vedoo.com.br/"}, "sameAs": ["https://instagram.com/gustavovedoo", "https://github.com/gustavonapier"]}</script>
   <script>document.documentElement.classList.add('js');</script>
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
@@ -43,14 +45,15 @@
   <script src="assets/js/gustavo.js" defer></script>
   <script src="app.js" defer></script>
   <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/sobre.js" defer></script>
 </head>
-<body class="page-gustavo page-sobre">
+<body class="page-gustavo page-sobre sobre-claro">
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
   <header class="header">
-    <a class="header__logo" href="index.html" aria-label="Vedoo, de Gustavo Azevedo. Início"><img src="assets/marca/vedoo-logo-claro.svg" alt="Vedoo" width="132" height="35"><span class="header__by" aria-hidden="true">por Gustavo Azevedo</span></a>
+    <a class="header__logo" href="index.html" aria-label="Vedoo, de Gustavo Azevedo. Início"><img src="assets/marca/vedoo-logo-escuro.svg" alt="Vedoo" width="132" height="35"><span class="header__by" aria-hidden="true">por Gustavo Azevedo</span></a>
     <nav class="header__nav" aria-label="Páginas">
       <a href="index.html">Início</a>
-      <a href="gustavo.html" aria-current="page">Sobre</a>
+      <a href="sobre.html" aria-current="page">Sobre</a>
       <a href="projetos.html">Projetos</a>
       <a href="contato.html">Contato</a>
     </nav>
@@ -62,31 +65,36 @@
   <main id="conteudo" class="g">
 
     <!-- ================= Abertura ================= -->
-    <section class="g-me" aria-labelledby="g-me-title">
-     <div class="g-me__in" data-spot>
-      <span class="g-me__grid" aria-hidden="true"></span>
-      <div class="g-me__text">
-        <p class="label g-in" style="--d:0"><span class="dot"></span>Sobre</p>
-        <h1 id="g-me-title" class="g-me__title g-in" style="--d:1">Oi, eu sou <span class="g-script g-script--red">o Gustavo.</span></h1>
-        <p class="g-lead g-in" style="--d:2">Designer e desenvolvedor. Desenho e programo sites para negócios que querem ser lembrados, não só encontrados.</p>
-        <div class="g-me__cta g-in" style="--d:3">
-          <a class="btn btn--red" href="projetos.html">Ver projetos</a>
-          <a class="btn btn--ghost" href="contato.html">Falar comigo</a>
+    <!-- ================= Abertura do Sobre (clara): título + pílula e fotos reais flutuando. Estilos em assets/sobre.css.
+         As fotos daqui se repetem no varal de propósito; dá pra trocar por outras depois. ================= -->
+    <section class="vsb" aria-labelledby="g-me-title">
+      <span class="vsb__grid" aria-hidden="true"></span>
+      <figure class="vsb__photo vsb__photo--a" data-in style="--i:3;--r:-3deg" data-depth="0.6"><img src="assets/gustavo/fotos/setup.webp" alt="" width="560" height="560" /><figcaption>onde tudo acontece</figcaption></figure>
+      <figure class="vsb__photo vsb__photo--b" data-in style="--i:4;--r:3deg" data-depth="1"><img src="assets/gustavo/fotos/vista.webp" alt="" width="560" height="560" /><figcaption>Maricá, RJ</figcaption></figure>
+      <figure class="vsb__photo vsb__photo--c" data-in style="--i:5;--r:-4deg" data-depth="1"><img src="assets/gustavo/fotos/montando-pc.webp" alt="" width="560" height="560" /><figcaption>montando PC</figcaption></figure>
+      <figure class="vsb__photo vsb__photo--d" data-in style="--i:6;--r:4deg" data-depth="0.6"><img src="assets/gustavo/fotos/treino.webp" alt="" width="560" height="560" /><figcaption>treino</figcaption></figure>
+      <figure class="vsb__photo vsb__photo--e" data-in style="--i:7;--r:-2deg" data-depth="1"><img src="assets/gustavo/fotos/mar.webp" alt="" width="560" height="560" /><figcaption>pé na areia</figcaption></figure>
+      <figure class="vsb__photo vsb__photo--f" data-in style="--i:8;--r:3deg" data-depth="0.6"><img src="assets/gustavo/fotos/livro.webp" alt="" width="560" height="560" /><figcaption>leitura</figcaption></figure>
+      <div class="vsb__center">
+        <div class="vsb__strip" aria-hidden="true">
+        <figure class="vsb__photo"><img src="assets/gustavo/fotos/setup.webp" alt="" width="560" height="560" /></figure>
+        <figure class="vsb__photo"><img src="assets/gustavo/fotos/vista.webp" alt="" width="560" height="560" /></figure>
+        <figure class="vsb__photo"><img src="assets/gustavo/fotos/treino.webp" alt="" width="560" height="560" /></figure>
+        <figure class="vsb__photo"><img src="assets/gustavo/fotos/montando-pc.webp" alt="" width="560" height="560" /></figure>
+        <figure class="vsb__photo"><img src="assets/gustavo/fotos/mar.webp" alt="" width="560" height="560" /></figure>
         </div>
+        <h1 id="g-me-title" class="vsb__title" data-in style="--i:0"><span class="visually-hidden">Gustavo Azevedo, designer e desenvolvedor de sites: </span><span>Do primeiro rascunho</span><span>ao site no ar</span></h1>
+        <span class="vsb__box" data-in style="--i:1" aria-hidden="true">
+          <span class="vsb__pill">Tudo comigo</span>
+          <span class="vsb__badge"><img src="assets/gustavo/avatar.webp" alt="" width="240" height="240" /><span><small>Oi, eu sou o</small>Gustavo Azevedo</span></span>
+        </span>
+        <p class="vsb__lead" data-in style="--i:2">Designer e desenvolvedor em Maricá (RJ). Desenho e programo sites do zero, e você fala direto comigo do começo ao fim.</p>
+        <ul class="vsb__facts" data-in style="--i:3">
+          <li><span>Base</span>Maricá, RJ</li>
+          <li><span>Formação</span>Ciência da Computação</li>
+          <li><span>Atende</span>Todo o Brasil, online</li>
+        </ul>
       </div>
-      <div class="g-me__art g-in" style="--d:2">
-        <span class="g-about__disc" aria-hidden="true"></span>
-        <span class="g-me__fig"><img class="g-me__final" src="assets/gustavo/busto-bracos.webp" alt="Personagem 3D do Gustavo de braços cruzados" width="1100" height="1226" fetchpriority="high"></span>
-        <span class="g-me__tag g-me__tag--a" aria-hidden="true">Software Engineer</span>
-        <span class="g-me__tag g-me__tag--b" aria-hidden="true">Dev &amp; Web Designer</span>
-      </div>
-      <ul class="g-about__facts g-me__facts g-in" style="--d:4">
-        <li><span>Base</span>Maricá, RJ</li>
-        <li><span>Formação</span>Ciência da Computação</li>
-        <li><span>Atende</span>Rio, Niterói e o Brasil todo</li>
-      </ul>
-     </div>
-     <div class="g-wave g-wave--bottom" aria-hidden="true"><svg viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 52Q120 6 240 52T480 52T720 52T960 52T1200 52T1440 52T1680 52T1920 52T2160 52T2400 52T2640 52T2880 52V120H0Z"/></svg><svg viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 72Q180 28 360 72T720 72T1080 72T1440 72T1800 72T2160 72T2520 72T2880 72V120H0Z"/></svg></div>
     </section>
 
     <!-- ================= Duas metades: arraste a barra (designer de um lado, dev do outro) ================= -->
@@ -257,7 +265,7 @@
                 <p class="g-sheet__role">Desenvolvedor Full Stack</p>
               </div>
               <ul class="g-sheet__contact">
-                <li>Maricá, RJ · atendo o Rio e online</li>
+                <li>Maricá, RJ · atendo todo o Brasil</li>
                 <li><a href="https://wa.me/5521974127756">(21) 97412-7756</a></li>
                 <li><a href="mailto:developing.gu@gmail.com">developing.gu@gmail.com</a></li>
                 <li><a href="https://instagram.com/gustavovedoo">@gustavovedoo</a> · <a href="https://github.com/gustavonapier">github.com/gustavonapier</a></li>
@@ -345,7 +353,7 @@
       <p class="footer__tag">Seu negócio merece <em>ser lembrado.</em></p>
     </div>
     <div class="footer__bottom">
-      <nav aria-label="Rodapé"><a href="index.html">Início</a><a href="gustavo.html">Sobre</a><a href="projetos.html">Projetos</a><a href="contato.html">Contato</a><a href="https://instagram.com/gustavovedoo" target="_blank" rel="noopener">Instagram</a></nav>
+      <nav aria-label="Rodapé"><a href="index.html">Início</a><a href="sobre.html">Sobre</a><a href="projetos.html">Projetos</a><a href="contato.html">Contato</a><a href="https://instagram.com/gustavovedoo" target="_blank" rel="noopener">Instagram</a></nav>
       <p>© <span id="year">2026</span> Vedoo · Gustavo Azevedo</p>
     </div>
   </footer>
@@ -359,7 +367,7 @@
     <nav class="menu__links" aria-label="Navegação principal">
       <a href="index.html">Início</a>
       
-      <a href="gustavo.html">Sobre</a>
+      <a href="sobre.html">Sobre</a>
       <a href="projetos.html">Projetos</a>
       <a href="contato.html">Contato</a>
     </nav>

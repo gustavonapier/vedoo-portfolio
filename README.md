@@ -149,7 +149,7 @@ cd vedoo-portfolio
 npm start
 ```
 
-Depois é só acessar **http://127.0.0.1:4173**. O servidor local também aceita URLs limpas (`/projetos`, `/gustavo`, `/contato`) e mostra a página 404.
+Depois é só acessar **http://127.0.0.1:4173**. O servidor local também aceita URLs limpas (`/projetos`, `/sobre`, `/contato`) e mostra a página 404.
 
 ## Publicar
 
@@ -169,7 +169,7 @@ Página ou pasta nova no site precisa entrar na lista do [`ferramentas/montar-si
 ```
 ├── index.html          Início
 ├── projetos.html       Projetos (a mesa)
-├── gustavo.html        Sobre (/gustavo)
+├── sobre.html          Sobre (/sobre)
 ├── contato.html        Contato
 ├── 404.html            Página de erro
 ├── projects.js         Lista de projetos

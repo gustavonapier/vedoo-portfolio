@@ -7,7 +7,7 @@
   "assets": {
     // só a pasta dist/ vai pro ar; quem monta ela é o "npm run build" (ferramentas/montar-site.mjs)
     "directory": "./dist",
-    // /gustavo abre o gustavo.html (e /gustavo.html redireciona pra /gustavo)
+    // /sobre abre o sobre.html (e /sobre.html redireciona pra /sobre)
     "html_handling": "auto-trailing-slash",
     // endereço que não existe mostra a 404.html
     "not_found_handling": "404-page"

@@ -1,5 +1,5 @@
 /*
-  Páginas claras: Início (index.html) e Sobre (gustavo.html). Cada bloco só roda se o elemento existir na página.
+  Páginas claras: Início (index.html) e Sobre (sobre.html). Cada bloco só roda se o elemento existir na página.
   1) Capa (Início): o personagem troca de expressão (sorriso, piscada, surpreso) e inclina de leve seguindo o mouse.
   2) Projetos em destaque (Início): cards com a capa de cada site, a partir do projects.js.
   3) Currículo (Sobre): botão de imprimir/salvar em PDF e crachá que cai e fica pendurado.

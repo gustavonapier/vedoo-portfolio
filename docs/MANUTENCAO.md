@@ -6,7 +6,7 @@ Notas pra quem for mexer no código. A apresentação do projeto está no [READM
 
 `npm start` e acesse http://127.0.0.1:4173. O `server.cjs` e o Playwright existem só para desenvolvimento.
 
-Em hospedagens com "URL limpa" (Netlify, Vercel) as páginas abrem em `/projetos`, `/gustavo` e `/contato` (o `server.cjs` local também aceita).
+Em hospedagens com "URL limpa" (Netlify, Vercel) as páginas abrem em `/projetos`, `/sobre` e `/contato` (o `server.cjs` local também aceita).
 
 ## Páginas
 
@@ -14,7 +14,7 @@ Em hospedagens com "URL limpa" (Netlify, Vercel) as páginas abrem em `/projetos
 |---|---|---|
 | Início | `index.html` | página clara "Dev & Web Design": capa com o personagem 3D, três projetos em destaque, serviços, faixa de tecnologias e contato |
 | Projetos | `projetos.html` | a "mesa": todos os projetos em janelas de navegador que dá pra arrastar (quatro por vez, com setas pra trocar), cursores "Gustavo" e "Você", processo e chamada pro contato |
-| Sobre | `gustavo.html` | abre no link "Sobre" do menu e em `/gustavo` (é o link da bio): sobre, currículo e contato |
+| Sobre | `sobre.html` | abre no link "Sobre" do menu e em `/sobre` (o `/gustavo` antigo, link da bio, redireciona pra cá pelo `_redirects`): sobre, currículo e contato |
 | Contato | `contato.html` | conversa em formato de chat (uma pergunta por vez) que termina com a mensagem pronta pro WhatsApp; WhatsApp, e-mail e Instagram diretos. Fundo preto e quadro no estilo novo (`assets/contato-tema.css`) |
 
 `404.html` é a página de erro (endereço que não existe): escura, sem rodapé, com um quadro de conversa sobre um 404 gigante em contorno e tipografia própria (só Inter). O quadro pergunta como a pessoa chegou ali; cada resposta tem uma réplica e um destino, e o botão redondo recomeça (lista `REPLIES` em `assets/js/404.js`; estilo em `assets/404.css`). Os caminhos nela começam com `/` porque ela pode abrir em qualquer endereço. Netlify, Vercel, Cloudflare Pages e GitHub Pages usam esse arquivo sozinhos.
@@ -58,17 +58,17 @@ Esses sites aparecem pelo preview (`assets/js/preview.js`): qualquer elemento co
 - A foto dos quadros de conversa (Início e Contato) é `assets/gustavo/avatar.webp`: o rosto do personagem centralizado, em fundo escuro.
 - Contato do Início: título e contatos (e-mail, Instagram, GitHub) à esquerda e um quadro de conversa à direita (`.g-chat`). O quadro é uma chamada: qualquer clique nele leva pra página de contato (inclusive o "campo" de baixo, que é um link com cara de campo de mensagem); na primeira vez que aparece, as falas entram como se fossem digitadas (bloco "Quadro de conversa" no `gustavo.js`); cada resposta leva o assunto escolhido (`contato.html?assunto=novo`, `reforma`, `loja` ou `duvida`), que o `conversa.js` usa pra abrir a conversa e incluir na mensagem final. A página Sobre termina com essa mesma seção.
 
-**Sobre (`gustavo.html`)**
+**Sobre (`sobre.html`)**
 
 - Abertura escura "Oi, eu sou o Gustavo." (`.g-me__in`, com ondas embaixo): disco vermelho atrás do `busto-bracos`; um quadriculado com brilho vermelho segue o mouse (`.g-me__grid`). Nessa página o cabeçalho usa o tema escuro (classe `page-sobre` no `<body>` e logo claro).
 - "Duas metades" (`.g-duo`): uma janela com um site de verdade (o Burger), à esquerda o layout desenhado (`assets/gustavo/burger-rascunho.webp`) e à direita o site pronto (`burger-pronto.webp`), separados por uma barra que arrasta (mouse, dedo ou setas do teclado); no celular entram as versões `-m`, tiradas na largura de celular. O JS fica no `gustavo.js`. As duas imagens de cada par precisam ter exatamente o mesmo tamanho e enquadramento.
 - "Fora da tela" (`.g-fotos`): bloco escuro com borda de papel rasgado em cima e embaixo (`.g-rasgo`) e um varal com luzinhas e uma fila de polaroids que balançam, anda sozinha devagar e dá pra arrastar (mouse ou dedo). As fotos ficam em `assets/gustavo/fotos/` e cada uma é um `<li class="g-pola">` no HTML (as deitadas levam `g-pola--larga`): é só copiar um `<li>`, trocar a imagem e a legenda.
-- Currículo (`#curriculo`): crachá que cai quando a seção aparece e fica pendurado + a folha do currículo sobre papel quadriculado. Procure `TROCAR` no `gustavo.html` pra colocar anos, faculdade e outros trabalhos.
+- Currículo (`#curriculo`): crachá que cai quando a seção aparece e fica pendurado + a folha do currículo sobre papel quadriculado. Procure `TROCAR` no `sobre.html` pra colocar anos, faculdade e outros trabalhos.
 - A página termina com a mesma seção de contato do Início (o quadro de conversa).
 
 ## Currículo em PDF
 
-O botão "Baixar currículo em PDF" da página Sobre baixa o arquivo `assets/gustavo/curriculo-gustavo-azevedo.pdf`. Esse PDF é o currículo principal do Gustavo (voltado para vaga de desenvolvedor full stack) e é um arquivo à parte: não é gerado a partir da folha que aparece na página. Pra trocar, basta salvar o PDF novo com esse mesmo nome na mesma pasta. A folha da página (`.g-sheet`, no `gustavo.html`) é um resumo solto, com a borda de baixo rasgada, fita, marca-texto, anotações à mão e um carimbo; o texto dela é próprio, então se mudar um dado no PDF, confira se a folha continua batendo.
+O botão "Baixar currículo em PDF" da página Sobre baixa o arquivo `assets/gustavo/curriculo-gustavo-azevedo.pdf`. Esse PDF é o currículo principal do Gustavo (voltado para vaga de desenvolvedor full stack) e é um arquivo à parte: não é gerado a partir da folha que aparece na página. Pra trocar, basta salvar o PDF novo com esse mesmo nome na mesma pasta. A folha da página (`.g-sheet`, no `sobre.html`) é um resumo solto, com a borda de baixo rasgada, fita, marca-texto, anotações à mão e um carimbo; o texto dela é próprio, então se mudar um dado no PDF, confira se a folha continua batendo.
 
 ## SEO (aparecer no Google e nos compartilhamentos)
 
@@ -85,7 +85,7 @@ O botão "Baixar currículo em PDF" da página Sobre baixa o arquivo `assets/gus
 | Projetos | `projects.js` (instruções no topo do arquivo). A ordem da lista é a ordem na mesa; `destaque: true` põe o projeto no Início; `externo: true` (site no domínio do cliente, como o Brasas e Fogão) abre o site em nova aba |
 | Prints dos projetos | `assets/projetos/` (paisagem, ~1200 px de largura, de preferência `.webp`) |
 | Textos do Início | `index.html` |
-| Textos da página Sobre e do currículo | `gustavo.html` (procure `TROCAR`) |
+| Textos da página Sobre e do currículo | `sobre.html` (procure `TROCAR`) |
 | WhatsApp e e-mail | `contato.html` (bloco "Prefere falar direto?" e `window.VEDOO_CONTACT` no fim do arquivo) e `index.html` (seção Contato) |
 | Perguntas da conversa do contato | `assets/js/conversa.js` (lista `STEPS` no topo) |
 | Opções do quadro de conversa do Início | links dentro de `.g-chat__opts` no `index.html` e a lista `ASSUNTOS` no `assets/js/conversa.js` (os dois precisam bater) |
