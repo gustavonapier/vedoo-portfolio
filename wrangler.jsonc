@@ -11,11 +11,10 @@
     "html_handling": "auto-trailing-slash",
     // endereço que não existe mostra a 404.html
     "not_found_handling": "404-page"
-  }
-  // Quando o domínio estiver comprado e na Cloudflare, tire as duas barras das linhas abaixo
-  // (e ponha uma vírgula depois da chave que fecha "assets", na linha de cima):
-  // "routes": [
-  //   { "pattern": "vedoo.com.br", "custom_domain": true },
-  //   { "pattern": "www.vedoo.com.br", "custom_domain": true }
-  // ]
+  },
+  // o site responde no domínio com e sem www
+  "routes": [
+    { "pattern": "vedoo.com.br", "custom_domain": true },
+    { "pattern": "www.vedoo.com.br", "custom_domain": true }
+  ]
 }
