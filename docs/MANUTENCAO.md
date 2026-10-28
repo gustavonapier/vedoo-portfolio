@@ -78,6 +78,15 @@ O botão "Baixar currículo em PDF" da página Sobre baixa o arquivo `assets/gus
 - O Início e o Sobre têm dados estruturados (`application/ld+json`) com nome, cidade, telefone e redes.
 - Depois de publicar: cadastrar o site no Google Search Console e enviar o `sitemap.xml`.
 
+## Segurança (cabeçalhos)
+
+Os cabeçalhos de segurança ficam no `_headers` (bloco `/*`) e valem pro site inteiro, incluindo `burger/`, `vet/` e `conceitos/`. Dá pra conferir a nota em https://developer.mozilla.org/en-US/observatory.
+
+- **Nada de script dentro do HTML.** A `Content-Security-Policy` só roda arquivos `.js` do próprio site: `<script>...</script>` com código e `onclick=""` são bloqueados (por isso existem o `assets/js/tem-js.js` e o `assets/js/contato-dados.js`). O `application/ld+json` do SEO pode ficar. `style=""` e `<style>` continuam liberados.
+- **Coisas de outro endereço** (fonte, vídeo, analytics, iframe de outro site) precisam entrar na linha da `Content-Security-Policy`, senão o navegador bloqueia sem avisar na tela: o erro só aparece no Console.
+- O `npm start` não aplica esses cabeçalhos. Pra testar igual ao ar, use `npm run preview` e olhe o Console.
+- O redirecionamento de `http://` pra `https://` não fica no código: é a opção "Always Use HTTPS" no painel da Cloudflare (SSL/TLS → Edge Certificates).
+
 ## O que editar
 
 | O quê | Onde |
@@ -86,7 +95,7 @@ O botão "Baixar currículo em PDF" da página Sobre baixa o arquivo `assets/gus
 | Prints dos projetos | `assets/projetos/` (paisagem, ~1200 px de largura, de preferência `.webp`) |
 | Textos do Início | `index.html` |
 | Textos da página Sobre e do currículo | `sobre.html` (procure `TROCAR`) |
-| WhatsApp e e-mail | `contato.html` (bloco "Prefere falar direto?" e `window.VEDOO_CONTACT` no fim do arquivo) e `index.html` (seção Contato) |
+| WhatsApp e e-mail | `contato.html` (bloco "Prefere falar direto?"), `assets/js/contato-dados.js` (`window.VEDOO_CONTACT`) e `index.html` (seção Contato) |
 | Perguntas da conversa do contato | `assets/js/conversa.js` (lista `STEPS` no topo) |
 | Opções do quadro de conversa do Início | links dentro de `.g-chat__opts` no `index.html` e a lista `ASSUNTOS` no `assets/js/conversa.js` (os dois precisam bater) |
 | Frase do rodapé ("Seu negócio merece ser lembrado.") | `footer__tag` e `menu__foot` nos HTML |
