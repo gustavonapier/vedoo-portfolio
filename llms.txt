@@ -1,0 +1,35 @@
+# Vedoo
+
+> Vedoo é o estúdio de Gustavo Azevedo, designer e desenvolvedor de sites em Maricá (RJ). Cria sites institucionais, landing pages e lojas virtuais sob medida, desenhados e programados do zero, com atendimento direto e online para todo o Brasil.
+
+- Quem faz: Gustavo Azevedo, formado em Ciência da Computação (Centro Universitário Anhanguera de Niterói, 2026). Faz o design e o código; o cliente fala direto com ele do começo ao fim.
+- Base: Maricá, RJ. Atende todo o Brasil, online.
+- Serviços: landing pages, sites institucionais, e-commerce (lojas virtuais), direção visual e manutenção de sites.
+- Segmentos já atendidos ou com projeto no portfólio: restaurantes, hamburguerias, clínicas, odontologia, estética, veterinária, imóveis, seguros.
+- Como funciona: 1) conversa sobre o negócio; 2) direção visual aprovada antes do código; 3) design e programação do site completo, rápido e pronto para o Google e o celular; 4) publicação, domínio e acompanhamento depois da entrega.
+- Tecnologias: HTML, CSS, JavaScript, TypeScript, React, Next.js, Node.js, Laravel, PHP, MySQL, Figma.
+- Contato: WhatsApp (21) 97412-7756, e-mail developing.gu@gmail.com, Instagram @gustavovedoo.
+
+## Perguntas frequentes
+
+- Preço: depende do tamanho do site; orçamento sob medida e sem compromisso, pelo WhatsApp.
+- Prazo: até 7 dias.
+- Domínio e hospedagem: inclusos para quem assina a mensalidade; sem ela, são pagos à parte pelo cliente.
+- Pagamento: entrada mais o restante na entrega; à vista tem 10% de desconto.
+- Manutenção: feita pelo Gustavo; o cliente manda o que quer mudar e ele atualiza.
+
+## Páginas
+
+- [Início](https://vedoo.com.br/): serviços, projetos em destaque e contato
+- [Projetos](https://vedoo.com.br/projetos): portfólio com os sites e landing pages criados
+- [Sobre](https://vedoo.com.br/sobre): quem é Gustavo Azevedo, formação e currículo
+- [Contato](https://vedoo.com.br/contato): WhatsApp, e-mail e Instagram
+
+## Projetos
+
+- [Brasas e Fogão](https://brasasefogao.com.br/): site institucional de restaurante (Next.js, React, TypeScript)
+- [Cauda Leve Vet](https://vedoo.com.br/vet/): site institucional de clínica veterinária
+- [Burger](https://vedoo.com.br/burger/): landing page de hamburgueria
+- Quanta Corp: landing page, simulador de receita e painel para uma corretora (Node.js)
+- Coonsulta: sistema por assinatura para consultórios médicos (Laravel, MySQL)
+- Fêmina Hub: sistema de gestão hospitalar (Laravel, MySQL)

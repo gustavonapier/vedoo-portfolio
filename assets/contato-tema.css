@@ -39,7 +39,7 @@
 
 /* "Prefere falar direto?": os contatos diretos, pra quem não quer passar pela conversa */
 .page-contato .conversa__alt { margin-top: auto; padding-top: 32px; }
-.page-contato .conversa__alt-k { margin: 0; font: 400 clamp(18px, 1.5vw, 22px)/1.15 "Unbounded", system-ui, sans-serif; letter-spacing: -.045em; }
+.page-contato .conversa__alt-k { margin: 0; font: 600 clamp(18px, 1.5vw, 22px)/1.2 var(--text); letter-spacing: -.02em; }
 .page-contato .conversa__alt-t { margin: 8px 0 0; max-width: 36ch; font-size: 14.5px; line-height: 1.5; color: var(--mute); }
 .page-contato .conversa__direct { margin: 16px 0 0; padding: 0; gap: 0; font-size: 15.5px; border-top: 1px solid rgba(239, 237, 232, .14); max-width: 400px; }
 .page-contato .conversa__direct li { align-items: center; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid rgba(239, 237, 232, .14); }

@@ -11,7 +11,7 @@ const dist = path.join(raiz, 'dist');
 const itens = [
   'index.html', 'sobre.html', 'projetos.html', 'contato.html', '404.html',
   'styles.css', 'app.js', 'projects.js',
-  'robots.txt', 'sitemap.xml', '_headers', '_redirects',
+  'robots.txt', 'sitemap.xml', 'llms.txt', '_headers', '_redirects',
   'assets', 'burger', 'vet', 'conceitos',
 ];
 

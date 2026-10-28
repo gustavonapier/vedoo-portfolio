@@ -42,7 +42,7 @@ Esses sites aparecem pelo preview (`assets/js/preview.js`): qualquer elemento co
 
 - A página Contato é escura: a estrutura está no `styles.css` (`.conversa`, `.chat`) e a aparência (fundo preto, balões, botões vermelhos, foto do personagem) em `assets/contato-tema.css`, que carrega por último.
 - Início e Sobre usam `<body class="page-gustavo">`, o estilo em `assets/gustavo.css` (tudo começa com `.g`; não passa pelo `ferramentas/escala.py`) e o comportamento em `assets/js/gustavo.js` (cada bloco só roda se o elemento existir na página).
-- Pra ficarem leves: não usam a rolagem suave do Lenis (o `motion.js` pula quando o body é `page-gustavo`), o grão do papel não usa `mix-blend-mode`, e as animações da capa pausam quando ela sai da tela.
+- Pra ficarem leves: o grão do papel não usa `mix-blend-mode`, e as animações da capa pausam quando ela sai da tela.
 - Os estilos da página Sobre antiga (`.bio`, `.story`, `.name-story`, `.tools`…), do hero antigo (`.hero`, `.impacto`) e da grade antiga de projetos (`.work__*`) continuam no `styles.css`, sem uso.
 
 **Início (`index.html`)**
@@ -56,6 +56,7 @@ Esses sites aparecem pelo preview (`assets/js/preview.js`): qualquer elemento co
 - Serviços usa o estilo "prancheta" (papel quadriculado e a lista como um arquivo num editor de código): bloco "Serviços: prancheta" no `gustavo.css`, ligado pelo `data-estilo="prancheta"` na seção do `index.html`.
 - "Com o que eu construo" é uma faixa preta com ícone + nome de cada tecnologia, em duas fileiras que andam sozinhas, aceleram com a rolagem e dá pra arrastar. A lista fica no `<ul>` dentro de `.g-band` no `index.html` (ícones de simpleicons.org): é só copiar um `<li>`.
 - A foto dos quadros de conversa (Início e Contato) é `assets/gustavo/avatar.webp`: o rosto do personagem centralizado, em fundo escuro.
+- Perguntas frequentes (`#duvidas`, depois de Serviços): cada pergunta é um `<details>` (abre e fecha sem JS; estilo no bloco "Perguntas frequentes" do `gustavo.css`). As mesmas perguntas e respostas estão no JSON-LD `FAQPage` do `<head>`: mudou uma, mude a outra igual. O `llms.txt` (na raiz) resume o site pras IAs e também repete preço, prazo e pagamento.
 - Contato do Início: título e contatos (e-mail, Instagram, GitHub) à esquerda e um quadro de conversa à direita (`.g-chat`). O quadro é uma chamada: qualquer clique nele leva pra página de contato (inclusive o "campo" de baixo, que é um link com cara de campo de mensagem); na primeira vez que aparece, as falas entram como se fossem digitadas (bloco "Quadro de conversa" no `gustavo.js`); cada resposta leva o assunto escolhido (`contato.html?assunto=novo`, `reforma`, `loja` ou `duvida`), que o `conversa.js` usa pra abrir a conversa e incluir na mensagem final. A página Sobre termina com essa mesma seção.
 
 **Sobre (`sobre.html`)**
@@ -106,7 +107,7 @@ O cabeçalho (Início, Sobre, Projetos, Contato), o menu e o rodapé se repetem 
 ## Movimento ao rolar (GSAP + Lenis)
 
 - `assets/vendor/`: GSAP 3 + ScrollTrigger e Lenis, locais (sem CDN).
-- `assets/js/motion.js`: rolagem suave (Lenis, só nas páginas escuras), cabeçalho que some ao descer e volta ao subir, títulos com palavras subindo, linhas do processo se desenhando e logo do rodapé subindo. Os botões não se mexem: só mudam de cor no hover.
+- `assets/js/motion.js`: rolagem suave (Lenis, em todas as páginas), cabeçalho que some ao descer e volta ao subir, títulos com palavras subindo, linhas do processo se desenhando e logo do rodapé subindo. Os botões não se mexem: só mudam de cor no hover.
 - Se as bibliotecas não carregarem, ou com "reduzir movimento" ativado, o site continua funcionando só com o CSS.
 - A troca entre páginas usa um fade curto (View Transitions) nos navegadores que suportam.
 

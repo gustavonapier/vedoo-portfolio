@@ -149,7 +149,8 @@
 
 /* ---------------- Títulos e blocos comuns ---------------- */
 .g > .g-about, .g > .g-cv, .g > .g-work, .g > .g-services, .g > .g-contact { padding: clamp(72px, 10vw, 150px) var(--g-pad); border-top: 1px solid var(--ink-line); }
-.g-h2 { margin: 0; font: 300 clamp(32px, 5vw, 80px)/1.02 var(--g-sans); letter-spacing: -.05em; text-wrap: balance; }
+.g-h2 { margin: 0; font: 400 clamp(32px, 5vw, 80px)/1.08 var(--text); letter-spacing: -.035em; text-wrap: balance; }
+.g-h2 .g-script { font: inherit; line-height: inherit; } /* palavra em vermelho na mesma fonte do título */
 .g-h2--xl { font-size: clamp(36px, 5.8vw, 96px); }
 .g-lead { font: 300 clamp(18px, 1.9vw, 27px)/1.3 var(--g-sans); letter-spacing: -.03em; text-wrap: pretty; }
 .g-head { display: grid; gap: clamp(16px, 2vw, 26px); margin-bottom: clamp(40px, 6vw, 84px); }
@@ -278,14 +279,14 @@
 }
 .g-fotos .g-head__note { max-width: 50ch; }
 /* título todo na serifada itálica: é a parte "à mão" da página */
-.g-fotos__title { margin: 0; font: italic 400 clamp(46px, 7vw, 116px)/.92 var(--g-script); letter-spacing: -.015em; text-wrap: balance; }
-.g-fotos__title em { font: inherit; color: var(--red); letter-spacing: inherit; }
+.g-fotos__title { margin: 0; font: 400 clamp(36px, 5.6vw, 92px)/1.05 var(--text); letter-spacing: -.035em; text-wrap: balance; }
+.g-fotos__title em { font: inherit; font-style: normal; color: var(--red); letter-spacing: inherit; }
 /* borda de papel rasgado: o papel claro da seção vizinha entra por cima do bloco escuro */
 .g-rasgo { position: absolute; left: 0; top: -1px; z-index: 2; display: block; width: 100%; height: clamp(26px, 4.2vw, 60px); fill: #EFEDE8; filter: drop-shadow(0 6px 6px rgba(0, 0, 0, .35)); pointer-events: none; }
 .g-rasgo__b { fill: #CFCBC2; }
 .g-rasgo--baixo { top: auto; bottom: -1px; transform: scaleY(-1); filter: drop-shadow(0 6px 6px rgba(0, 0, 0, .35)); }
 /* o varal: uma fila comprida de fotos que anda sozinha devagar e dá pra arrastar */
-.g-varal { margin: clamp(10px, 2vw, 30px) calc(var(--g-pad) * -1) 0; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; cursor: grab; outline-offset: -6px; }
+.g-varal { margin: clamp(10px, 2vw, 30px) calc(var(--g-pad) * -1) 0; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; cursor: grab; outline-offset: -6px; user-select: none; -webkit-user-select: none; }
 .g-varal::-webkit-scrollbar { display: none; }
 .g-varal.is-drag { cursor: grabbing; }
 .g-polas { --cell: clamp(230px, 23vw, 330px); margin: 0; padding: 0 0 70px; list-style: none; display: flex; width: max-content; }
@@ -545,6 +546,28 @@
   .g-services[data-estilo="prancheta"] .g-list li { grid-template-columns: 44px minmax(0, 1fr); padding-right: 16px; }
   .g-services[data-estilo="prancheta"] .g-list span { grid-row: 1 / span 2; padding-right: 10px; }
 }
+
+/* ---------------- Perguntas frequentes ----------------
+   <details> do próprio HTML: abre e fecha sem JS. O texto fica no HTML (o Google lê mesmo fechado). */
+   Título centralizado e as perguntas num cartão branco no meio. */
+.g > .g-faq { padding: clamp(72px, 10vw, 150px) var(--g-pad); border-top: 1px solid var(--ink-line); }
+.g-faq .g-head { justify-items: center; text-align: center; }
+.g-faq__list { max-width: 720px; margin: 0 auto; padding: clamp(8px, 1.6vw, 20px) clamp(20px, 3vw, 40px); border-radius: 24px; background: #FBFAF7; box-shadow: 0 1px 2px rgba(11, 17, 20, .04), 0 24px 48px -28px rgba(11, 17, 20, .18); }
+.g-faq details + details { border-top: 1px solid var(--ink-line); }
+.g-faq summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 0;
+  cursor: pointer; list-style: none; font: 500 17px/1.4 var(--text); transition: color .3s;
+}
+.g-faq summary::-webkit-details-marker { display: none; }
+/* "+" fino desenhado com duas linhas; vira "×" ao abrir */
+.g-faq summary::after {
+  content: ""; flex: none; width: 14px; height: 14px; color: var(--ink-mute);
+  background: linear-gradient(currentColor, currentColor) center / 100% 1.5px no-repeat, linear-gradient(currentColor, currentColor) center / 1.5px 100% no-repeat;
+  transition: transform .4s var(--ease), color .3s;
+}
+.g-faq details[open] summary::after { transform: rotate(45deg); color: var(--red); }
+.g-faq summary:hover, .g-faq summary:hover::after { color: var(--red); }
+.g-faq details p { max-width: 60ch; padding: 0 38px 24px 0; color: var(--ink-mute); font-size: 16px; line-height: 1.6; }
 
 /* ---------------- Contato ---------------- */
 .g > .g-contact { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(28px, 5vw, 80px); align-items: end; padding-bottom: 0; }

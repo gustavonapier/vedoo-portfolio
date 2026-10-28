@@ -14,10 +14,9 @@
   const hasIntro = !!document.querySelector('.intro') && !root.classList.contains('no-intro');
 
   /* ---------- Lenis: rolagem suave ---------- */
-  // Na página Sobre a rolagem é a normal do navegador (é mais leve). No Início e nas outras páginas, Lenis.
+  // Lenis em todas as páginas.
   let lenis = null;
-  const body = document.body.classList;
-  if (window.Lenis && (!body.contains('page-gustavo') || body.contains('page-inicio'))) {
+  if (window.Lenis) {
     lenis = new window.Lenis({
       duration: 1.15,
       easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
