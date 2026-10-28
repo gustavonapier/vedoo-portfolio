@@ -421,15 +421,63 @@ a.work__card:hover .work__media img { transform: scale(1.03); }
 .footer__bottom a:hover { color: var(--red); }
 
 /* Menu (celular) */
-.menu { width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; border: 0; padding: calc(env(safe-area-inset-top, 0px) + 22px) var(--gutter) calc(env(safe-area-inset-bottom, 0px) + 28px); background: var(--deep); color: var(--osso); flex-direction: column; }
+/* Menu do celular: painel que desce do topo (o JS liga .is-open / .is-closing) */
+@font-face { font-family: "Hanken Grotesk"; font-weight: 500; font-style: normal; font-display: swap; src: url("assets/fonts/hanken-grotesk-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Hanken Grotesk"; font-weight: 600; font-style: normal; font-display: swap; src: url("assets/fonts/hanken-grotesk-latin-600-normal.woff2") format("woff2"); }
+html.menu-open, html.menu-open body { overflow: hidden; }
+.menu {
+  --m-ease: cubic-bezier(.16, 1, .3, 1);
+  position: fixed; inset: 0 0 auto; width: auto; max-width: 560px;
+  height: calc(100vh - 20px); height: calc(100dvh - env(safe-area-inset-top, 0px) - 20px); max-height: none; /* quase a tela inteira */
+  margin: calc(env(safe-area-inset-top, 0px) + 10px) 10px 0; margin-inline: max(10px, (100vw - 560px) / 2); border: 0; border-radius: 28px;
+  padding: 18px 20px calc(env(safe-area-inset-bottom, 0px) + 20px); overflow: auto;
+  background: #0E0E0E; color: #F2F0EC; box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+  flex-direction: column; font-family: "Hanken Grotesk", system-ui, sans-serif;
+  clip-path: inset(0 0 100% 0 round 28px); transform: translateY(-14px);
+  transition: clip-path .6s var(--m-ease), transform .6s var(--m-ease);
+}
 .menu[open] { display: flex; }
-.menu::backdrop { background: rgba(0,0,0,.6); }
-.menu__head { display: flex; justify-content: space-between; align-items: center; }
-.menu__close { background: none; border: 0; color: var(--osso); font-family: var(--display); font-size: 24px; cursor: pointer; }
-.menu__links { display: flex; flex-direction: column; margin-top: auto; }
-.menu__links a { display: flex; justify-content: space-between; align-items: center; font-family: var(--display); font-size: clamp(56px, 16vw, 96px); line-height: 1; text-decoration: none; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.menu.is-open { clip-path: inset(0 0 0 0 round 28px); transform: none; }
+.menu.is-closing { transition-duration: .36s; transition-timing-function: cubic-bezier(.7, 0, .84, 0); }
+.menu::backdrop { background: rgba(8, 10, 12, 0); backdrop-filter: blur(0); -webkit-backdrop-filter: blur(0); transition: background .45s ease, backdrop-filter .45s ease; }
+.menu.is-open::backdrop { background: rgba(8, 10, 12, .45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.menu__head { display: flex; justify-content: space-between; align-items: center; padding: 2px 2px 0 6px; }
+.menu__head img { width: 104px; height: auto; }
+.menu__close {
+  display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 6px 0 16px; border-radius: 100px;
+  background: rgba(255, 255, 255, .08); border: 0; color: #F2F0EC; font: 500 15px/1 "Hanken Grotesk", sans-serif; cursor: pointer;
+}
+.menu__close span { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: #F2F0EC; color: #0E0E0E; font-size: 18px; transition: transform .5s var(--m-ease); }
+.menu.is-open .menu__close span { transform: rotate(90deg); }
+.menu__close:focus { outline: none; }
+.menu__close:focus-visible { outline: 2px solid rgba(242, 240, 236, .35); outline-offset: 3px; }
+.menu__links a:focus-visible, .menu__actions a:focus-visible { outline: 2px solid rgba(242, 240, 236, .35); outline-offset: 2px; border-radius: 12px; }
+.menu__links { flex: 1; display: flex; flex-direction: column; justify-content: center; margin-top: 12px; }
+.menu__links a {
+  display: flex; align-items: center; gap: 14px; padding: clamp(14px, 2.6vh, 24px) 6px; text-decoration: none; color: #F2F0EC;
+  font: 600 clamp(36px, 11vw, 52px)/1 "Hanken Grotesk", sans-serif; letter-spacing: -.045em;
+  border-bottom: 1px solid rgba(242, 240, 236, .1);
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .5s var(--m-ease), transform .6s var(--m-ease), color .25s;
+}
+.menu.is-open .menu__links a { opacity: 1; transform: none; transition-delay: calc(.12s + var(--i, 0) * .06s), calc(.12s + var(--i, 0) * .06s), 0s; }
+.menu.is-closing .menu__links a { transition-delay: 0s; }
+.menu__links a small { font: 500 12px/1 "Hanken Grotesk", sans-serif; letter-spacing: .04em; color: rgba(242, 240, 236, .4); width: 22px; }
+.menu__links a i { margin-left: auto; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, .07); color: rgba(242, 240, 236, .7); transition: transform .4s var(--m-ease), background .25s, color .25s; }
+.menu__links a:active i, .menu__links a:hover i { transform: rotate(45deg); background: #F2F0EC; color: #0E0E0E; }
+.menu__links a[aria-current="page"] { color: #fff; }
+.menu__links a[aria-current="page"] small { color: transparent; position: relative; }
+.menu__links a[aria-current="page"] small::after { content: ""; position: absolute; left: 4px; top: 50%; width: 9px; height: 9px; margin-top: -4.5px; border-radius: 50%; background: linear-gradient(167deg, #ff7f00, #E5383B); box-shadow: 0 0 12px rgba(255, 127, 0, .6); }
 .menu__links a span { font-size: .4em; color: var(--red); }
-.menu__foot { margin: 28px 0 0; font-family: var(--serif); font-size: 26px; }
+.menu__actions { display: flex; gap: 10px; margin-top: 22px; opacity: 0; transform: translateY(14px); transition: opacity .5s var(--m-ease) .36s, transform .6s var(--m-ease) .36s; }
+.menu.is-open .menu__actions { opacity: 1; transform: none; }
+.menu.is-closing .menu__actions { transition-delay: 0s; }
+.menu__zap { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; border-radius: 100px; text-decoration: none; color: #fff; font: 600 16px/1 "Hanken Grotesk", sans-serif; background: linear-gradient(167deg, #ff7f00, #E5383B); box-shadow: inset 0 0 18px rgba(255, 214, 0, .35); }
+.menu__insta { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; color: #F2F0EC; background: rgba(255, 255, 255, .08); }
+.menu__foot { margin: 18px 6px 0; font: 500 14px/1.3 "Hanken Grotesk", sans-serif; color: rgba(242, 240, 236, .5); opacity: 0; transition: opacity .5s ease .45s; }
+.menu.is-open .menu__foot { opacity: 1; }
+.menu__foot em { font-family: var(--serif); font-size: 1.15em; }
+@media (prefers-reduced-motion: reduce) { .menu, .menu *, .menu::backdrop { transition: none !important; } }
 
 /* Responsivo do cabeçalho */
 @media (max-width: 960px) {

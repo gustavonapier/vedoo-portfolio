@@ -271,15 +271,6 @@ a.work__card:hover .work__media img { transform: scale(1.03); }
 .footer__bottom nav { display: flex; flex-wrap: wrap; gap: 7.6px 22.8px; }
 .footer__bottom a { text-decoration: none; color: var(--osso); }
 .footer__bottom a:hover { color: var(--red); }
-.menu { width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; border: 0; padding: calc(env(safe-area-inset-top, 0px) + 20.9px) var(--gutter) calc(env(safe-area-inset-bottom, 0px) + 26.6px); background: var(--deep); color: var(--osso); flex-direction: column; }
-.menu[open] { display: flex; }
-.menu::backdrop { background: rgba(0,0,0,.6); }
-.menu__head { display: flex; justify-content: space-between; align-items: center; }
-.menu__close { background: none; border: 0; color: var(--osso); font-family: var(--display); font-size: 22.8px; cursor: pointer; }
-.menu__links { display: flex; flex-direction: column; margin-top: auto; }
-.menu__links a { display: flex; justify-content: space-between; align-items: center; font-family: var(--display); font-size: clamp(53.2px, 16vw, 91.2px); line-height: 1; text-decoration: none; padding: 9.5px 0; border-bottom: 1px solid var(--line); }
-.menu__links a span { font-size: .4em; color: var(--red); }
-.menu__foot { margin: 26.6px 0 0; font-family: var(--serif); font-size: 24.7px; }
 @media (max-width: 960px) {
 .header { grid-template-columns: 1fr auto; }
 .header__nav { display: none; }
@@ -440,7 +431,6 @@ em { font-style: normal; font-weight: 300; letter-spacing: -.03em; }
 .bio__text .bio__lead { font-weight: 300; font-size: clamp(19px, 2vw, 26.6px); line-height: 1.25; letter-spacing: -.025em; }
 .work__item--next .work__media p { font-weight: 300; font-size: clamp(19px, 2vw, 26.6px); line-height: 1.15; letter-spacing: -.025em; }
 .footer__tag { font-weight: 300; font-size: clamp(17.1px, 2.2vw, 26.6px); letter-spacing: -.03em; }
-.menu__foot { font-weight: 300; font-size: 17.1px; letter-spacing: -.02em; }
 .win__empty { font-weight: 300; font-size: 25px; letter-spacing: -.03em; }
 .chat__b--big { font-weight: 300; font-size: clamp(18.05px, 1.55vw, 21.85px); line-height: 1.25; letter-spacing: -.025em; }
 }
